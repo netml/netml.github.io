@@ -1,125 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>netML Lab</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #006699 3px solid;
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            display: inline;
-            margin: 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        header .highlight, header .current a {
-            color: #e8491d;
-            font-weight: bold;
-        }
-        header a:hover {
-            color: #ffffff;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1>netML Lab</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<!DOCTYPE HTML>
 
-    <section id="about" class="container">
-        <h2>About netML Lab</h2>
-        <p>
-            Welcome to netML Lab, where we are dedicated to researching and advancing the field of machine learning in network applications. Here, you will find information about our research interests, latest publications, and how to get in touch with us.
-        </p>
-    </section>
+<style>
+#circle
+{
+	border-radius:50% 50% 50% 50%;
+	width:200px;
+	height:200px;
+}
+img
+{
+  border-radius: 3%;
+	max-width: 100%;
+	max-height: 100%;
+}
+</style>
 
-    <section id="research" class="container">
-        <h2>Research Areas</h2>
-        <p>
-            Our research areas include but are not limited to:
-            <ul>
-                <li>Machine Learning in Network Security</li>
-                <li>Algorithmic Developments for Large-Scale Data</li>
-                <li>Network Traffic Analysis</li>
-                <!-- Add more as needed -->
-            </ul>
-        </p>
-    </section>
+<html>
+	<head>
+		<title>netML Lab | University of Central Missouri</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
 
-    <section id="publications" class="container">
-        <h2>Recent Publications</h2>
-        <p>
-            Below is a selection of our recent work:
-            <ul>
-                <li>Publication Title 1 - <i>Journal/Conference Name</i></li>
-                <li>Publication Title 2 - <i>Journal/Conference Name</i></li>
-                <li>Publication Title 3 - <i>Journal/Conference Name</i></li>
-                <!-- Add more as needed -->
-            </ul>
-        </p>
-    </section>
+		<!-- Header -->
+			<header id="header">
+				<h1>netML Lab | About</h1>
+			</header>
 
-    <section id="contact" class="container">
-        <h2>Contact Us</h2>
-        <p>
-            For more information or to discuss potential collaborations, please get in touch with us at:
-            <address>
-                <strong>Email:</strong> <a href="mailto:info@netml.github.io">info@netml.github.io</a><br>
-                <strong>Lab Address:</strong> [Your Lab's Physical Address Here]
-            </address>
-        </p>
-    </section>
+		<!-- One -->
+			<section id="one" class="main style2 right dark fullscreen">
+				<div align=center class="content box style2">
+					<header>
+						<img id="circle" src="./images/ai.jpg"></img>
+						<h2>netML Lab</h2>
+					</header>
+					<p>
+					Directed by: <a href="http://cs.ucmo.edu/~aksoy/" target="_blank">Dr. Ahmet Aksoy</a></br>
+					aksoy {at} ucmo.edu </br>
+					Department of Computer Science & Cybersecurity </br>
+					University of Central Missouri </br>
+					</p>
 
-    <footer class="container">
-        <p>&copy; 2023 netML Lab - All Rights Reserved.</p>
-    </footer>
-</body>
+					<!-- Social -->
+					<ul class="actions">
+						<li><a href="https://scholar.google.com/citations?user=mt4x8MYAAAAJ&hl=en" class="icon fa-google" target="_blank"><span class="label">Google Scholar</span></a></li>
+						<li><a href="https://www.researchgate.net/profile/Ahmet_Aksoy4" class="icon fa-university" target="_blank"><span class="label">ResearchGate</span></a></li>
+						<li><a href="https://www.linkedin.com/in/ahmetkadiraksoy" class="icon fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/ahmetkadiraksoy" class="icon fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- Work -->
+			<section id="work" class="main style3 primary">
+				<div class="content">
+					<!-- Menu -->
+					<table align=center>
+						<tr>
+							<td><h3><u>About</u></h3></td>
+							<td>|</td>
+							<td><h3><a href="research.html">Research</a></h3></td>
+							<td>|</td>
+							<td><h3><a href="publications.html">Publications</a></h3></td>
+							<td>|</td>
+							<td><h3><a href="contact.html">Contact</a></h3></td>
+						</tr>
+					</table>
+					<hr>
+
+					</br></br>
+
+					<header align=left>
+						<p>
+								<h3>Join Our Research Team in Network Security and Machine Learning</h3>
+								<p>Dr. Aksoy invites applications from dedicated and enthusiastic students eager to delve into the realms of <span class="highlight">Network Security</span> and <span class="highlight">Machine Learning</span>. We are on the lookout for individuals who bring a strong foundation in programming and a keenness to assimilate theoretical concepts in these cutting-edge fields.</p>
+								<p>If you are driven by curiosity and ready to contribute to groundbreaking research, we would love to hear from you. To express your interest, please arrange a meeting by visiting Dr. Aksoy's office, or submit your application via contact information provided below. Your application should include your Curriculum Vitae (CV) and a brief statement of your research interests and professional aspirations.</p>
+								<p>This is more than a call for participation; it's an invitation to be at the forefront of technological innovation in a dynamic and supportive research environment. We eagerly await the unique perspective you will bring to our team.</p>
+								</br>
+								<div class="contact-info">
+									<strong>Email Dr. Aksoy:</strong> 
+									aksoy {at} ucmo.edu<br>
+									<strong>Visit the Office:</strong> 
+									WCM 115
+								</div>						 
+						</p>
+
+						<p>
+							<ul>
+								<table>
+									<tr align=center>
+										<td>
+											<a href="./images/lab_1.jpg" target="_blank"><img width=435px src="./images/lab_1.jpg"></img></a>
+											<a href="./images/lab_2.jpg" target="_blank"><img width=435px src="./images/lab_2.jpg"></img></a>
+										</td>
+									</tr>
+								</table>
+							</ul>
+						</p>
+
+						</br>
+
+						<table>
+							<tr class=fit>
+								<td align=center>
+									<iframe width="80%" height="310%" src="https://www.youtube.com/embed/OEKEoWWQdkk" frameborder="0" allowfullscreen></iframe>
+								</td>
+							</tr>
+						</table>
+						
+					</header>
+
+					
+				</div>
+			</section>
+
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<!-- Menu -->
+					<ul class="menu">
+						<li>Design: <a href="https://html5up.net">HTML5 UP</font></a></li>
+					</ul>
+
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
