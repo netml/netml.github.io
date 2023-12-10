@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+
+<style>
+.img-circle {
+  border-radius: 50%;
+  border:3px solid white;
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+}
+</style>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SILEA Algorithm - a System for Inductive LEArning</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css">
+    <link href="css/styles.css?v=1.6" rel="stylesheet">
+    <link href="css/queries.css?v=1.6" rel="stylesheet">
+    <link href="css/jquery.fancybox.css" rel="stylesheet">
+    <!-- Fonts -->
+      <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+      <section class="navigation">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+              <nav class="pull">
+                <ul class="top-nav">
+                  <li><a href="#getstarted">Code <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                  <li><a href="#media">Authors <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                  <li class="nav-last"><a href="#features">Paper <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero" id="hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-right">
+              <a href="#"><i class="fa fa-navicon fa-2x nav_slide_button"></i></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+              <h1 class="animated bounceInDown">SILEA</h1>
+              <p class="animated fadeInUpDelay">a System for Inductive LEArning</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2 col-md-offset-5 text-center">
+              <a href="http://player.vimeo.com/video/175171095?title=0&amp;byline=0&amp;portrait=0&amp;color=1883ad&amp;autoplay=1" class="hero-play-btn various fancybox.iframe">Play Button</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+              <a href="#getstarted" class="get-started-btn">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="download-now" id="getstarted">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 wp1">
+              <h1>
+              A simple and efficient Inductive Learning algorithm
+              </h1>
+              <p>SILEA (a System for Inductive LEArning) is an efficient inductive learning algorithm for rule extraction. SILEA is a covering algorithm which extracts IF-THEN rules from a collection of examples in a reliable way.</p>
+              <a href="./SILEA.zip" class="download-btn">Download Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="testimonials" id="media">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div id="firstSlider">
+                <ul class="slides">
+                  <li>
+                    <a href="http://cse.unr.edu/~aksoy" target=_blank><div class="avatar"><img class="img-circle" src="img/aksoy.jpg" width=170></div></a>
+                    <h1>Ahmet Aksoy </br> University of Nevada, Reno</h1>
+                  </li>
+                  <li>
+                    <a href="http://cse.unr.edu/~mgunes" target=_blank><div class="avatar"><img class="img-circle" src="img/gunes.jpg" width=170></div></a>
+                    <h1>Mehmet Gunes </br> University of Nevada, Reno</h1>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="features" id="features">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 features-leftcol wp2">
+              <h1>Feature Selection</h1>
+              <p class="margin-bottom">SILEA employs a feature selection technique similar to that of Sequential Forward Selection to decrease the number of attribute-value
+pairs that are to be considered. Sequential Forward Selection prioritizes certain attributes over the others by an objective function. Similarly, SILEA makes sure that these biases are made on attributes with higher metric values than the other attributes. The metric used for this purpose is the entropy measure. This approach allows SILEA to avoid consideration of enormous amount of possible combinations for each iteration.</p>
+            </div>
+            <div class="col-md-6 features-rightcol wp3">
+              <h1>Rule Extraction</h1>
+              <p class="margin-bottom">The extraction process that SILEA employs eliminates unnecessary comparisons needed for rule extraction. It extracts all possible rules for each considered combination and selects the most classifying ones among them. It excludes the rules which might become obsolete due to the existence of more classifying rules. This approach assures the extraction of the most general rules for the considered combination of attributes.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <a href="./IISA2016.pdf" class="try-btn">Read the paper</a>
+            </div>
+          </div>
+        </div>
+      </section>
+<!---
+      <section class="design" id="design">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div id="secondSlider">
+                <ul class="slides">
+                  <li>
+                    <div class="col-md-4">
+                      <div class="flat-box">
+                        <div class="colourway colour1"></div>
+                        <p class="title">Fast</p>
+                        <p class="feature-text">SILEA employs a feature selection technique similar to that of Sequential Forward Selection to decrease the number of attribute-value pairs that are to be considered.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="flat-box">
+                        <div class="colourway colour2"></div>
+                        <p class="title">Accurate</p>
+                        <p class="feature-text">The extraction process that SILEA employs elim- inates unnecessary comparisons needed for rule extraction. It extracts all possible rules for each considered combination and selects the most classifying ones among them.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 design-content">
+                      <h1>Fast and Accurate</h1>
+                      <p>Feature Selection and Rule Extraction & Selection Methods of SILEA tries to extract rules in an efficient and accurate way. </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="col-md-4">
+                      <div class="flat-box">
+                        <div class="colourway colour3"></div>
+                        <p class="title">Extra Startup Juice</p>
+                        <p class="feature-text">Added Feature</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="flat-box">
+                        <div class="colourway colour4"></div>
+                        <p class="title">So Thirsty</p>
+                        <p class="feature-text">Extra nice UI comes with the app</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 design-content">
+                      <h1>So flat you'll want to give it some shadows</h1>
+                      <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-1 col-md-offset-11 text-right controls">
+                <a href="prev" class="prev"><i class="fa fa-angle-left fa-3x"></i></a>
+                <a href="next" class="next"><i class="fa fa-angle-right fa-3x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+--->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+		            <p>SILEA (a System for Inductive LEArning)</p>
+                    <p>A simple and efficient Inductive Learning algorithm</p>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-2 col-md-offset-3">
+              <ul class="footer-nav">
+                <li><a href="#getstarted">Code</a></li>
+                <li><a href="#media">Authors</a></li>
+                <li><a href="#features">Paper</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <a href="#" class="badge-btn">Badge Button</a>
+              <p class="footer-credit">Algorithm by <a target=_blank href="http://cse.unr.edu/~aksoy">Ahmet Aksoy</a>, <a target=_blank href="http://cse.unr.edu/~mgunes">Mehmet Gunes</a></p>
+              <p class="footer-credit">Design by <a target=_blank href="http://www.blazrobar.com">Blaz Robar</a> , <a target=_blank href="http://www.peterfinlan.com">Peter Finlan</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="js/jquery.fancybox.pack.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/scripts.js?v=1.7"></script>
+      <script src="js/jquery.flexslider.js"></script>
+      <script src="js/jquery.smooth-scroll.js"></script>
+      <script src="js/modernizr.js"></script>
+      <script src="js/waypoints.min.js"></script>
+    </body>
+  </html>
