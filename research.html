@@ -18,6 +18,10 @@
 	margin-left: auto;
 	margin-right: auto;
 	}
+	.custom-list li::before {
+		content: "• "; /* Unicode bullet */
+		color: black; /* or any color you like */
+	}
 </style>
 
 <html>
@@ -84,72 +88,77 @@
 						<!-- </br> -->
 						<ul>
 							<li>
-								<h3>An Automated Alternative to JA3 Hashing for SSL/TLS Library Analysis:</h3>
+								<h3>Network-based Threat and Attack Detection:</h3>
 								<p>
-									Our project introduces an innovative, automated approach to host identification that serves as an alternative to the traditional JA3 hashing technique. This new method focuses on analyzing SSL/TLS libraries to accurately identify host devices, employing advanced algorithms to enhance the identification process. The system is designed to be fully automated, reducing the need for expert intervention while increasing the accuracy and efficiency of host detection. By optimizing the way SSL/TLS library characteristics are analyzed and interpreted, this approach aims to provide a more robust and scalable solution for network security professionals monitoring encrypted traffic.
+									Our research introduces automated techniques to detect and classify network-based threats and attacks, such as DNS botnets, DoS attacks, and fast-flux networks. Using machine learning, genetic algorithms, and feature optimization, we develop detection systems that analyze network traffic patterns to uncover malicious activities, even when attackers attempt to evade traditional defenses. This approach eliminates the need for manual rule creation and allows for continuous adaptation to emerging threats, providing security teams with a more proactive and resilient solution for safeguarding networks.
+									</br></br>
+									Papers published:
+									<ul class="custom-list">
+										<li>Automated network incident identification through genetic algorithm-driven feature selection</li>
+										<li>Automated fast-flux detection using machine learning and genetic algorithms</li>
+									</ul>
 								</p>
 							</li>
 
 							</br>
 
 							<li>
-								<h3>Enhancing Automated Incident Classification with Genetic Algorithms and Explainable AI:</h3>
+								<h3>Network Host Fingerprinting and Identification:</h3>
 								<p>
-									Our project explores the use of explainable AI (XAI) and genetic algorithms (GAs) to develop a novel approach for automated incident classification. This system is designed to not only classify incidents effectively but also to optimize the feature set used in the classification process, ensuring that each feature contributes meaningfully to the accuracy of the model. By employing genetic algorithms, we fine-tune the selection of features, while explainable AI provides insights into the decision-making processes of the algorithms, making the outcomes understandable and trustworthy. This integration aims to create a transparent, efficient, and fully automated classification system that requires minimal human oversight, enhancing both the performance and accountability of incident response strategies.
+									Our work on network host fingerprinting and identification focuses on analyzing network traffic characteristics to uncover the unique signatures of individual hosts. Through advanced feature selection and machine learning algorithms, we develop fingerprints that can distinguish hosts with high accuracy, even in encrypted or complex environments. These fingerprints are then used to identify devices automatically, supporting tasks like inventory, monitoring, and anomaly detection. This fully automated process reduces reliance on manual signatures and enables scalable, real-time network management.
+									</br></br>
+									Papers published:
+									<ul class="custom-list">
+										<li>Automated Host Identification Using SSL/TLS Traffic with SHAP and Artificial Bee Colony</li>
+									</ul>
 								</p>
 							</li>
 
 							</br>
 
 							<li>
-								<h3>Genetic Algorithms for Enhanced Numeric Feature Quantization:</h3>
+								<h3>IoT Device Fingerprinting and Identification:</h3>
 								<p>
-									Our research employs genetic algorithms to optimize the numeric feature quantization process by automating the selection of optimal cluster numbers for k-means clustering. This optimization aims to improve the efficiency of the SILEA inductive learning algorithm, which generates accurate IF-THEN rules by producing more precise and reliable clusters. This approach seeks to enhance rule-based machine learning models, making them more interpretable and effective for applications that require clear decision-making processes.
-									</br>
-									</br>
-									Our tool is available <a target=_blank href="https://netml.github.io/silea/"><font style="color:#384349"><strong>here</strong></font></a>
-									</br>
-									Our dataset is available <a target=_blank href="https://www.kaggle.com/datasets/ahmetkadiraksoy/silea-ga-data"><font style="color:#384349"><strong>here</strong></font></a>
+									Our research develops automated methods for fingerprinting and identifying IoT devices based on their network behavior. By analyzing packets or single TCP/IP headers, we create unique fingerprints that reveal the type and vendor of each device, even with minimal data. We then use machine learning and optimization techniques to classify these devices accurately and efficiently. This approach helps network administrators detect, isolate, and manage IoT devices in large-scale environments, significantly improving overall security and visibility without the need for intrusive or device-dependent tools.
+									</br></br>
+									Papers published:
+									<ul class="custom-list">
+										<li>Automated IoT Fingerprinting with LLMs: Harnessing Explainable AI and Artificial Bee Colony Optimization</li>
+										<li>Automated iot device identification using network traffic</li>
+										<li>Comparative Analysis of Feature Selection Algorithms for Automated IoT Device Fingerprinting</li>
+										<li>AI-Driven Genetic Algorithms for Enhanced Numeric Feature Quantization in IoT Device Fingerprinting for Threat Detection</li>
+									</ul>
 								</p>
 							</li>
 
 							</br>
 
 							<li>
-								<h3>Automated Network Incident Classification:</h3>
+								<h3>Explainable AI and Feature Optimization in Network Security:</h3>
 								<p>
-									Our research introduces an innovative approach for automated incident classification based on the analysis of a single network packet. By integrating genetic algorithms (GA) with machine learning techniques, we aim to develop a fully automated system that does not require expert intervention. This methodology leverages the adaptive nature of GAs to optimize the feature selection and parameter tuning processes of machine learning models, ensuring efficient and accurate classification of network incidents. The goal is to provide a robust, non-expert-based solution that quickly identifies and categorizes network anomalies or security threats from minimal data, enhancing the speed and scalability of cybersecurity measures.
-									</br>
-									</br>
-									Our tool is available <a target=_blank href="https://github.com/netml/autoic"><font style="color:#384349"><strong>here</strong></font></a>
-									</br>
-									Our dataset for DoS GoldenEye & Hulk Network Attack is available <a target=_blank href="https://www.kaggle.com/datasets/exitium505/dos-goldeneye-and-hulk-pcaps"><font style="color:#384349"><strong>here</strong></font></a>
+									We focus on integrating explainable AI techniques and advanced feature optimization to enhance network security analytics. By using methods such as SHAP for explainability and algorithms like Artificial Bee Colony or genetic algorithms for feature selection, we reduce the complexity of data while maintaining or improving detection accuracy. This makes security models not only more efficient but also transparent and interpretable for practitioners. Our approach bridges the gap between high-performing black-box models and the practical need for understanding decision-making processes, empowering security teams to make more informed and confident responses.
+									</br></br>
+									Papers published:
+									<ul class="custom-list">
+										<li>Automated Host Identification Using SSL/TLS Traffic with SHAP and Artificial Bee Colony</li>
+										<li>Automated IoT Fingerprinting with LLMs</li>
+										<li>AI-Driven Genetic Algorithms for Enhanced Numeric Feature Quantization</li>
+									</ul>
 								</p>
 							</li>
 
 							</br>
 
 							<li>
-								<h3>Automated IoT Device Fingerprinting:</h3>
+								<h3>Operating System Fingerprinting and Identification:</h3>
 								<p>
-									Our research focuses on developing a fully automated classification system for Internet of Things (IoT) devices, capable of identifying device types from just a single network packet. We utilize a genetic algorithm (GA) alongside various machine learning techniques to craft an approach that operates independently of expert knowledge. This system leverages the adaptability of GAs to optimize both feature extraction and model parameters, ensuring that the classification process is both efficient and accurate. The ultimate aim is to enable quick, scalable detection and classification of IoT devices, facilitating enhanced network management and security without the need for specialized human oversight.
-									</br>
-									</br>
-									Our tool is available <a target=_blank href="https://github.com/netml/sysid"><font style="color:#384349"><strong>here</strong></font></a>
-								</p>
-							</li>
-
-							</br>
-
-							<li>
-								<h3>Automated Operating System Fingerprinting:</h3>
-								<p>
-									Our research introduces a fully automated method for passive operating system (OS) fingerprinting, crucial for enhancing network security by identifying the OS used on a target device without active engagement. We utilize a combination of genetic algorithms and machine learning techniques to streamline this process, aiming for a system that operates independently of expert input. This approach employs genetic algorithms to optimize the feature selection and machine learning model parameters, thereby improving the accuracy and efficiency of OS detection. The development of such a system allows for continuous, non-intrusive monitoring of networked devices, providing essential security insights without the need for specialized knowledge, thus bolstering network defenses against potential vulnerabilities.
-									</br>
-									</br>
-									Our tool is available <a target=_blank href="https://github.com/netml/osid"><font style="color:#384349"><strong>here</strong></font></a>
-									</br>
-									Our dataset for Operating System Identification is available <a target=_blank href="https://www.kaggle.com/datasets/ahmetkadiraksoy/osid-data"><font style="color:#384349"><strong>here</strong></font></a>
+									We propose a fully automated approach for fingerprinting and identifying operating systems by analyzing network packets without requiring expert-crafted signatures. By leveraging genetic algorithms for feature selection and various machine learning models, we create OS-specific fingerprints from protocol headers such as TCP/IP, HTTP, and DNS. These fingerprints are then used to accurately classify operating systems on hosts, facilitating enhanced network monitoring, vulnerability assessment, and asset management. Our method adapts to new or evolving OS versions, offering a robust and future-proof alternative to traditional manual techniques.
+									</br></br>
+									Papers published:
+									<ul class="custom-list">
+										<li>Operating system fingerprinting via automated network traffic analysis</li>
+										<li>Operating System Classification Performance of TCP/IP Protocol Headers</li>
+									</ul>
 								</p>
 							</li>
 						</ul>
