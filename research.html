@@ -84,107 +84,78 @@
 
 				<header align=left>
 					<p>
-						<!-- <h3><u>Research:</u></h3> -->
-						<!-- </br> -->
-						<ul>
-							<li>
-								<h3>Network-based Threat and Attack Detection:</h3>
-								<p>
-									Our research introduces automated techniques to detect and classify network-based threats and attacks, such as DNS botnets, DoS attacks, and fast-flux networks. Using machine learning, genetic algorithms, and feature optimization, we develop detection systems that analyze network traffic patterns to uncover malicious activities, even when attackers attempt to evade traditional defenses. This approach eliminates the need for manual rule creation and allows for continuous adaptation to emerging threats, providing security teams with a more proactive and resilient solution for safeguarding networks.
-									</br></br>
-									Papers published:
-									<ul class="custom-list">
-										<li>Automated network incident identification through genetic algorithm-driven feature selection</li>
-										<li>Automated fast-flux detection using machine learning and genetic algorithms</li>
-									</ul>
-								</p>
-							</li>
+					<ul>
 
-							</br>
+						<li>
+							<h3>Automated Network Threat Detection:</h3>
+							<p>
+								We develop automated detection frameworks that identify malicious network behavior directly from packet-level telemetry. Our work focuses on DNS botnets, DoS attacks (HULK, GoldenEye), fast-flux networks, and OS scanning activity. Rather than relying on manually crafted signatures, we use search-based feature selection and machine learning models to discover discriminative header-level representations that adapt to evolving attack patterns.
+								<br><br>
+								Papers published:
+							<ul class="custom-list">
+								<li>Automated Network Incident Identification through Genetic Algorithm-Driven Feature Selection</li>
+								<li>Automated Fast-Flux Detection using Machine Learning and Genetic Algorithms</li>
+							</ul>
+							</p>
+						</li>
 
-							<li>
-								<h3>Network Host Fingerprinting and Identification:</h3>
-								<p>
-									Our work on network host fingerprinting and identification focuses on analyzing network traffic characteristics to uncover the unique signatures of individual hosts. Through advanced feature selection and machine learning algorithms, we develop fingerprints that can distinguish hosts with high accuracy, even in encrypted or complex environments. These fingerprints are then used to identify devices automatically, supporting tasks like inventory, monitoring, and anomaly detection. This fully automated process reduces reliance on manual signatures and enables scalable, real-time network management.
-									</br></br>
-									Papers published:
-									<ul class="custom-list">
-										<li>Automated Host Identification Using SSL/TLS Traffic with SHAP and Artificial Bee Colony</li>
-									</ul>
-								</p>
-							</li>
+						<br>
 
-							</br>
+						<li>
+							<h3>Device and Host Fingerprinting:</h3>
+							<p>
+								We design automated fingerprinting systems capable of identifying devices, operating systems, and hosts using packet-level protocol headers, including encrypted SSL/TLS metadata. Our methods rely on wrapper-based search optimization to extract minimal yet highly discriminative feature subsets. These automatically generated fingerprints support device inventory, anomaly detection, and network visibility without dependence on expert-defined signatures.
+								<br><br>
+								Papers published:
+							<ul class="custom-list">
+								<li>Automated Host Identification Using SSL/TLS Traffic with SHAP and Artificial Bee Colony</li>
+								<li>Automated IoT Device Identification using Network Traffic</li>
+								<li>Comparative Analysis of Feature Selection Algorithms for Automated IoT Device Fingerprinting</li>
+								<li>Operating System Fingerprinting via Automated Network Traffic Analysis</li>
+								<li>Operating System Classification Performance of TCP/IP Protocol Headers</li>
+							</ul>
+							</p>
+						</li>
 
-							<li>
-								<h3>IoT Device Fingerprinting and Identification:</h3>
-								<p>
-									Our research develops automated methods for fingerprinting and identifying IoT devices based on their network behavior. By analyzing packets or single TCP/IP headers, we create unique fingerprints that reveal the type and vendor of each device, even with minimal data. We then use machine learning and optimization techniques to classify these devices accurately and efficiently. This approach helps network administrators detect, isolate, and manage IoT devices in large-scale environments, significantly improving overall security and visibility without the need for intrusive or device-dependent tools.
-									</br></br>
-									Papers published:
-									<ul class="custom-list">
-										<li>Automated IoT Fingerprinting with LLMs: Harnessing Explainable AI and Artificial Bee Colony Optimization</li>
-										<li>Automated iot device identification using network traffic</li>
-										<li>Comparative Analysis of Feature Selection Algorithms for Automated IoT Device Fingerprinting</li>
-										<li>AI-Driven Genetic Algorithms for Enhanced Numeric Feature Quantization in IoT Device Fingerprinting for Threat Detection</li>
-									</ul>
-								</p>
-							</li>
+						<br>
 
-							</br>
+						<li>
+							<h3>Optimization-Driven Feature Reduction and Explainable AI:</h3>
+							<p>
+								A central theme of our research is reducing informational redundancy in high-dimensional security telemetry while maintaining strong classification performance. We investigate genetic algorithms, Artificial Bee Colony optimization, and multi-method feature selection strategies to minimize feature sets without sacrificing predictive accuracy. We also integrate explainable AI techniques (e.g., SHAP) to analyze model behavior and guide feature reduction decisions. Recent work extends these principles to LLM-based IoT classification and numeric feature quantization.
+								<br><br>
+								Papers published:
+							<ul class="custom-list">
+								<li>Automated IoT Fingerprinting with LLMs: Harnessing Explainable AI and Artificial Bee Colony Optimization</li>
+								<li>AI-Driven Genetic Algorithms for Enhanced Numeric Feature Quantization in IoT Device Fingerprinting for Threat Detection</li>
+								<li>Comparative Analysis of Feature Selection Algorithms for Automated IoT Device Fingerprinting</li>
+							</ul>
+							</p>
+						</li>
 
-							<li>
-								<h3>Explainable AI and Feature Optimization in Network Security:</h3>
-								<p>
-									We focus on integrating explainable AI techniques and advanced feature optimization to enhance network security analytics. By using methods such as SHAP for explainability and algorithms like Artificial Bee Colony or genetic algorithms for feature selection, we reduce the complexity of data while maintaining or improving detection accuracy. This makes security models not only more efficient but also transparent and interpretable for practitioners. Our approach bridges the gap between high-performing black-box models and the practical need for understanding decision-making processes, empowering security teams to make more informed and confident responses.
-									</br></br>
-									Papers published:
-									<ul class="custom-list">
-										<li>Automated Host Identification Using SSL/TLS Traffic with SHAP and Artificial Bee Colony</li>
-										<li>Automated IoT Fingerprinting with LLMs</li>
-										<li>AI-Driven Genetic Algorithms for Enhanced Numeric Feature Quantization</li>
-									</ul>
-								</p>
-							</li>
+					</ul>
 
-							</br>
+					<br><hr><br>
 
-							<li>
-								<h3>Operating System Fingerprinting and Identification:</h3>
-								<p>
-									We propose a fully automated approach for fingerprinting and identifying operating systems by analyzing network packets without requiring expert-crafted signatures. By leveraging genetic algorithms for feature selection and various machine learning models, we create OS-specific fingerprints from protocol headers such as TCP/IP, HTTP, and DNS. These fingerprints are then used to accurately classify operating systems on hosts, facilitating enhanced network monitoring, vulnerability assessment, and asset management. Our method adapts to new or evolving OS versions, offering a robust and future-proof alternative to traditional manual techniques.
-									</br></br>
-									Papers published:
-									<ul class="custom-list">
-										<li>Operating system fingerprinting via automated network traffic analysis</li>
-										<li>Operating System Classification Performance of TCP/IP Protocol Headers</li>
-									</ul>
-								</p>
-							</li>
-						</ul>
+					<table>
+						<tr>
+							<td align=center>
+								<iframe src="https://open.spotify.com/embed/episode/5NLznmOnWPoORd9E5tvajD" width="80%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+							</td>
+						</tr>
+					</table>
 
-						</br><hr></br>
+					<br><hr><br>
 
-						<table>
-							<tr>
-								<td align=center>
-									<iframe src="https://open.spotify.com/embed/episode/5NLznmOnWPoORd9E5tvajD" width="80%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-								</td>
-							</tr>
-						</table>
-
-						</br><hr></br>
-
-						<table>
-							<tr>
-								<td align=center>
-									<iframe width="80%" height="310%" src="https://www.youtube.com/embed/OEKEoWWQdkk" frameborder="0" allowfullscreen></iframe>
-								</td>
-							</tr>
-						</table>
+					<table>
+						<tr>
+							<td align=center>
+								<iframe width="80%" height="315" src="https://www.youtube.com/embed/OEKEoWWQdkk" frameborder="0" allowfullscreen></iframe>
+							</td>
+						</tr>
+					</table>
 					</p>
-				</header>
-			</div>
+				</header>			</div>
 		</section>
 
 		<!-- Footer -->
