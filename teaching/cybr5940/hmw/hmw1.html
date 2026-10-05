@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Lab1_Squid_Step_by_Step_Guide_Updated</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">
+:root {
+--text: #1f1f1f;
+--muted: #666666;
+--border: #e5e5e5;
+--code-bg: #f4f4f4;
+--inline-code-bg: #f1f1f1;
+}
+html {
+background: #ffffff;
+font-size: 16px;
+}
+body {
+
+width: auto;
+max-width: 680px;
+margin: 0 auto;
+padding: 56px 24px 80px;
+color: var(--text);
+background: #ffffff;
+font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Helvetica, Arial, sans-serif;
+font-size: 16px;
+line-height: 1.65;
+-webkit-font-smoothing: antialiased;
+}
+
+header#title-block-header {
+margin-bottom: 2.5rem;
+}
+header#title-block-header .title {
+margin: 0 0 0.5rem;
+font-size: 2rem;
+line-height: 1.2;
+font-weight: 700;
+letter-spacing: -0.025em;
+}
+header#title-block-header .subtitle,
+header#title-block-header .author,
+header#title-block-header .date {
+margin: 0.2rem 0;
+color: var(--muted);
+font-size: 0.95rem;
+}
+h1, h2, h3, h4 {
+color: var(--text);
+line-height: 1.3;
+letter-spacing: -0.015em;
+}
+h1 {
+margin: 2.6rem 0 1rem;
+font-size: 1.75rem;
+font-weight: 700;
+}
+h2 {
+margin: 2.2rem 0 0.85rem;
+font-size: 1.4rem;
+font-weight: 700;
+}
+h3 {
+margin: 1.8rem 0 0.7rem;
+font-size: 1.12rem;
+font-weight: 650;
+}
+h4 {
+margin: 1.5rem 0 0.6rem;
+font-size: 1rem;
+font-weight: 650;
+}
+
+p {
+margin: 0.75rem 0;
+}
+strong {
+font-weight: 650;
+}
+a {
+color: inherit;
+text-decoration: underline;
+text-decoration-color: #9a9a9a;
+text-underline-offset: 2px;
+}
+ul, ol {
+margin: 0.75rem 0;
+padding-left: 1.55rem;
+}
+li {
+margin: 0.35rem 0;
+}
+hr {
+border: 0;
+border-top: 1px solid var(--border);
+margin: 2.5rem 0;
+}
+
+code {
+font-family: "SFMono-Regular", Consolas, "Liberation Mono",
+Menlo, monospace;
+}
+:not(pre) > code {
+padding: 0.15em 0.35em;
+background: var(--inline-code-bg);
+border-radius: 5px;
+font-size: 0.88em;
+}
+
+
+div.sourceCode {
+margin: 1rem 0 1.4rem;
+background: var(--code-bg) !important;
+border: 1px solid var(--border);
+border-radius: 10px;
+overflow: hidden;
+}
+div.sourceCode pre,
+div.sourceCode pre.sourceCode {
+margin: 0 !important;
+padding: 16px 18px !important;
+background: transparent !important;
+border: 0 !important;
+overflow-x: auto;
+line-height: 1.55;
+}
+
+pre {
+margin: 1rem 0 1.4rem;
+padding: 16px 18px;
+background: var(--code-bg);
+border: 1px solid var(--border);
+border-radius: 10px;
+overflow-x: auto;
+line-height: 1.55;
+}
+pre code,
+div.sourceCode code {
+padding: 0 !important;
+background: transparent !important;
+color: var(--text);
+font-size: 0.9rem;
+white-space: pre;
+}
+
+blockquote {
+margin: 1.25rem 0;
+padding: 0 0 0 1rem;
+border-left: 3px solid #c7c7c7;
+color: #444444;
+}
+blockquote p {
+margin: 0.45rem 0;
+}
+
+table {
+width: 100%;
+margin: 1.3rem 0 1.6rem;
+border-collapse: collapse;
+font-size: 0.94rem;
+}
+th, td {
+padding: 9px 11px;
+border-bottom: 1px solid var(--border);
+text-align: left;
+vertical-align: top;
+}
+th {
+font-weight: 650;
+}
+
+figure {
+margin: 1.6rem 0;
+}
+img {
+display: block;
+max-width: 100%;
+height: auto;
+margin: 1.4rem auto;
+border-radius: 8px;
+}
+figcaption {
+margin-top: 0.5rem;
+color: var(--muted);
+font-size: 0.86rem;
+text-align: center;
+}
+
+.note,
+.evidence,
+.question,
+.warning {
+margin: 1.15rem 0 1.4rem;
+padding: 14px 16px;
+background: #f7f7f7;
+border: 1px solid var(--border);
+border-radius: 10px;
+}
+.note > :first-child,
+.evidence > :first-child,
+.question > :first-child,
+.warning > :first-child {
+margin-top: 0;
+}
+.note > :last-child,
+.evidence > :last-child,
+.question > :last-child,
+.warning > :last-child {
+margin-bottom: 0;
+}
+
+@media print {
+@page {
+size: Letter;
+margin: 0.72in;
+}
+
+body {
+width: 5.8in;
+max-width: 5.8in;
+margin: 0 auto;
+padding: 0;
+font-size: 10.5pt;
+line-height: 1.55;
+}
+h1, h2, h3, h4 {
+break-after: avoid-page;
+page-break-after: avoid;
+}
+div.sourceCode,
+pre,
+table,
+blockquote,
+figure,
+.note,
+.evidence,
+.question,
+.warning {
+break-inside: avoid-page;
+page-break-inside: avoid;
+}
+pre,
+div.sourceCode {
+white-space: pre-wrap;
+overflow-wrap: anywhere;
+}
+a {
+text-decoration: none;
+}
+}
+</style>
+</head>
+<body>
+<h1 id="hmw-1-squid-web-proxy-server-setup-and-file-carving">HMW 1 –
+Squid Web Proxy Server Setup and File Carving</h1>
+<h2 id="before-you-begin">Before You Begin</h2>
+<p>For this lab, you need a working <strong>Ubuntu virtual
+machine</strong>.</p>
+<p>Make sure you can:</p>
+<ul>
+<li>Start and log in to your Ubuntu VM.</li>
+<li>Access the Internet from the VM.</li>
+<li>Open a terminal.</li>
+<li>Use Firefox.</li>
+</ul>
+<p>You will install and configure the Squid web proxy server, access a
+PDF through the proxy, locate the PDF in Squid’s cache, and recover the
+PDF from the cached data.</p>
+<hr />
+<h1 id="part-1-installing-squid-web-proxy-server">Part 1 – Installing
+Squid Web Proxy Server</h1>
+<h2 id="update-ubuntu-repository">1. Update Ubuntu Repository</h2>
+<p>Open a terminal and run:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span></code></pre></div>
+<h2 id="install-squid">2. Install Squid</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install squid</span></code></pre></div>
+<p>If prompted to continue, enter <code>Y</code>.</p>
+<hr />
+<h1 id="part-2-configuring-squid">Part 2 – Configuring Squid</h1>
+<h2 id="open-the-squid-configuration-file">3. Open the Squid
+Configuration File</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gedit /etc/squid/squid.conf</span></code></pre></div>
+<p>If <code>gedit</code> is not available, you may use another text
+editor installed on your Ubuntu system.</p>
+<h2 id="modify-the-access-rule">4. Modify the Access Rule</h2>
+<p>Find the following entry in the file:</p>
+<pre class="text"><code>http_access deny all</code></pre>
+<p>Replace it with:</p>
+<pre class="text"><code>http_access allow all</code></pre>
+<h2 id="enable-the-squid-cache-directory">5. Enable the Squid Cache
+Directory</h2>
+<p>Find the following line:</p>
+<pre class="text"><code>#cache_dir ufs /var/spool/squid 100 16 256</code></pre>
+<p>Remove the <code>#</code> so that the line becomes:</p>
+<pre class="text"><code>cache_dir ufs /var/spool/squid 100 16 256</code></pre>
+<p>Save the file and close the editor.</p>
+<h2 id="restart-squid">6. Restart Squid</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart squid</span></code></pre></div>
+<h2 id="enable-squid-at-startup">7. Enable Squid at Startup</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl enable squid</span></code></pre></div>
+<h2 id="check-squid-status">8. Check Squid Status</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl status squid</span></code></pre></div>
+<p>Verify that Squid is <strong>active (running)</strong>.</p>
+<h3 id="report-evidence">Report Evidence</h3>
+<p>Take a screenshot showing that the Squid service is active and
+running.</p>
+<hr />
+<h1 id="part-3-configuring-ubuntu-to-use-the-proxy">Part 3 – Configuring
+Ubuntu to Use the Proxy</h1>
+<h2 id="open-network-settings">9. Open Network Settings</h2>
+<ol type="1">
+<li>Open <strong>Settings</strong>.</li>
+<li>Select <strong>Network</strong>.</li>
+<li>Locate <strong>Network Proxy</strong>.</li>
+<li>Open the Network Proxy settings.</li>
+<li>Select <strong>Manual</strong>.</li>
+</ol>
+<h2 id="configure-the-proxy">10. Configure the Proxy</h2>
+<p>Configure the proxy as follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Address</th>
+<th style="text-align: left;">Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">HTTP Proxy</td>
+<td style="text-align: left;">localhost</td>
+<td style="text-align: left;">3128</td>
+</tr>
+<tr>
+<td style="text-align: left;">HTTPS Proxy</td>
+<td style="text-align: left;">localhost</td>
+<td style="text-align: left;">3128</td>
+</tr>
+</tbody>
+</table>
+<p>Apply the settings.</p>
+<h3 id="report-evidence-1">Report Evidence</h3>
+<p>Take a screenshot showing your Ubuntu Network Proxy
+configuration.</p>
+<hr />
+<h1 id="part-4-generating-web-traffic">Part 4 – Generating Web
+Traffic</h1>
+<h2 id="open-the-pdf">11. Open the PDF</h2>
+<p>Open Firefox and visit:</p>
+<p><code>http://cs.ucmo.edu/~aksoy/teaching/cybr5940/map.pdf</code></p>
+<p>Verify that the PDF opens successfully.</p>
+<hr />
+<h1 id="part-5-examining-the-squid-access-log">Part 5 – Examining the
+Squid Access Log</h1>
+<h2 id="display-the-access-log">12. Display the Access Log</h2>
+<p>Return to the terminal and run:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cat /var/log/squid/access.log</span></code></pre></div>
+<h2 id="locate-the-pdf-request">13. Locate the PDF Request</h2>
+<p>Look through the output for the request associated with
+<code>map.pdf</code>.</p>
+<h3 id="report-evidence-2">Report Evidence</h3>
+<p>Take a screenshot showing the Squid access log entry associated with
+<code>map.pdf</code>.</p>
+<p>In your report, briefly answer:</p>
+<p><strong>What information can you identify in the Squid access log
+entry for the PDF request?</strong></p>
+<hr />
+<h1 id="part-6-locating-the-pdf-in-the-squid-cache">Part 6 – Locating
+the PDF in the Squid Cache</h1>
+<h2 id="switch-to-the-root-user">14. Switch to the Root User</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> su</span></code></pre></div>
+<h2 id="navigate-to-the-squid-cache">15. Navigate to the Squid
+Cache</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /var/spool/squid</span></code></pre></div>
+<h2 id="search-the-cache">16. Search the Cache</h2>
+<p>Search for a cached file containing information about the PDF:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-rail</span> pdf</span></code></pre></div>
+<p>The command should return the location of the cached object
+containing the PDF.</p>
+<p><strong>Record the filename/path that you found. You will use it in
+the following steps.</strong></p>
+<h3 id="report-evidence-3">Report Evidence</h3>
+<p>Take a screenshot showing the result of your search and the cached
+object you identified.</p>
+<hr />
+<h1 id="part-7-examining-the-cached-object">Part 7 – Examining the
+Cached Object</h1>
+<h2 id="examine-the-beginning-of-the-file">17. Examine the Beginning of
+the File</h2>
+<p>Replace <code>FILENAME</code> with the cache filename you
+identified:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hexdump</span> <span class="at">-C</span> FILENAME <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<p>Examine the hexadecimal and ASCII output.</p>
+<p>You should be able to identify information associated with the
+requested PDF.</p>
+<p>The cached object contains:</p>
+<ol type="1">
+<li>URL information</li>
+<li>HTTP headers</li>
+<li>File data</li>
+</ol>
+<h3 id="report-evidence-4">Report Evidence</h3>
+<p>Take a screenshot of your <code>hexdump</code> output.</p>
+<p>In your report, identify:</p>
+<ul>
+<li>The URL</li>
+<li>HTTP header information</li>
+<li>Where the file data begins</li>
+</ul>
+<hr />
+<h1 id="part-8-finding-the-http-headerdata-boundary">Part 8 – Finding
+the HTTP Header/Data Boundary</h1>
+<p>The actual PDF data begins after the HTTP headers.</p>
+<p>HTTP headers and the message body are separated by:</p>
+<pre class="text"><code>\r\n\r\n</code></pre>
+<p>In hexadecimal, this is:</p>
+<pre class="text"><code>0d 0a 0d 0a</code></pre>
+<h2 id="display-more-of-the-cached-object">18. Display More of the
+Cached Object</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hexdump</span> <span class="at">-C</span> FILENAME <span class="kw">|</span> <span class="fu">head</span> <span class="at">-26</span></span></code></pre></div>
+<p>Look for:</p>
+<pre class="text"><code>0d 0a 0d 0a</code></pre>
+<p>Do not worry if the separator appears on a different line than shown
+in an example. Locate it in <strong>your own cached object</strong>.</p>
+<hr />
+<h1 id="part-9-installing-bless-hex-editor">Part 9 – Installing Bless
+Hex Editor</h1>
+<h2 id="install-bless">19. Install Bless</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install bless</span></code></pre></div>
+<h2 id="open-the-cached-object">20. Open the Cached Object</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bless</span> FILENAME</span></code></pre></div>
+<p>Bless will display the contents of the cached object in hexadecimal
+form.</p>
+<hr />
+<h1 id="part-10-carving-the-pdf">Part 10 – Carving the PDF</h1>
+<h2 id="find-the-headerdata-separator">21. Find the Header/Data
+Separator</h2>
+<p>In Bless, locate:</p>
+<pre class="text"><code>0d 0a 0d 0a</code></pre>
+<h3 id="report-evidence-5">Report Evidence</h3>
+<p>Before modifying the file, take a screenshot clearly showing the
+separator and the surrounding bytes.</p>
+<h2 id="remove-the-header-information">22. Remove the Header
+Information</h2>
+<p>Delete everything from the beginning of the cached object
+<strong>through and including</strong>:</p>
+<pre class="text"><code>0d 0a 0d 0a</code></pre>
+<p>The remaining data should contain the PDF file.</p>
+<h3 id="report-evidence-6">Report Evidence</h3>
+<p>Take a screenshot showing the beginning of the remaining data after
+the header information has been removed.</p>
+<p>In your report, answer:</p>
+<ol type="1">
+<li>What does <code>0d 0a 0d 0a</code> represent?</li>
+<li>Why is this sequence important when carving the PDF?</li>
+<li>What information did you remove from the cached object?</li>
+</ol>
+<hr />
+<h1 id="part-11-saving-the-carved-pdf">Part 11 – Saving the Carved
+PDF</h1>
+<h2 id="save-the-file">23. Save the File</h2>
+<p>In Bless:</p>
+<ol type="1">
+<li>Select <strong>File → Save As</strong>.</li>
+<li>Navigate to your home directory.</li>
+<li>Select <strong>Desktop</strong>.</li>
+<li>Save the file as:</li>
+</ol>
+<pre class="text"><code>carved.pdf</code></pre>
+<hr />
+<h1 id="part-12-correcting-file-ownership">Part 12 – Correcting File
+Ownership</h1>
+<h2 id="return-to-the-terminal">24. Return to the Terminal</h2>
+<p>Navigate to your Desktop:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop</span></code></pre></div>
+<h2 id="change-the-file-ownership">25. Change the File Ownership</h2>
+<p>Replace <code>YOURUSERNAME</code> with your Ubuntu username:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown YOURUSERNAME carved.pdf</span></code></pre></div>
+<hr />
+<h1 id="part-13-verify-the-recovered-file">Part 13 – Verify the
+Recovered File</h1>
+<h2 id="open-carved.pdf">26. Open carved.pdf</h2>
+<p>Use the Ubuntu Files application to locate:</p>
+<pre class="text"><code>carved.pdf</code></pre>
+<p>Open the file.</p>
+<p>If the carving process was completed correctly, the PDF should open
+normally.</p>
+<h3 id="report-evidence-7">Report Evidence</h3>
+<p>Take a screenshot clearly showing the successfully opened
+<code>carved.pdf</code>.</p>
+<p>If your PDF does not open, return to the cached object and verify
+that you correctly identified and removed the HTTP header
+information.</p>
+<hr />
+<h1 id="lab-report">Lab Report</h1>
+<p>Prepare a report documenting your work.</p>
+<p>Your report must contain:</p>
+<ol type="1">
+<li><p><strong>Lab Environment</strong></p>
+<p>Collect the following information from your Ubuntu VM and include the
+results in your report.</p>
+<p><strong>Ubuntu version:</strong></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lsb_release</span> <span class="at">-a</span></span></code></pre></div>
+<p>Record the Ubuntu release/version shown in the output.</p>
+<p><strong>Virtualization software:</strong></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">systemd-detect-virt</span></span></code></pre></div>
+<p>Record the virtualization platform reported by the command (for
+example, <code>oracle</code> for VirtualBox or <code>vmware</code> for
+VMware).</p>
+<p><strong>Squid version:</strong></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">squid</span> <span class="at">-v</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span></span></code></pre></div>
+<p>Record the Squid version shown in the output.</p></li>
+<li><p><strong>Squid Setup</strong></p>
+<ul>
+<li>Screenshot showing Squid active/running</li>
+<li>Screenshot of the proxy configuration</li>
+</ul></li>
+<li><p><strong>Squid Access Log</strong></p>
+<ul>
+<li>Screenshot showing the <code>map.pdf</code> request</li>
+<li>Brief explanation of what you observe in the log entry</li>
+</ul></li>
+<li><p><strong>Cache Examination</strong></p>
+<ul>
+<li>Screenshot showing how you located the cached object</li>
+<li>Screenshot of the <code>hexdump</code> output</li>
+<li>Identification of the URL, HTTP headers, and file data</li>
+</ul></li>
+<li><p><strong>File Carving</strong></p>
+<ul>
+<li>Screenshot showing <code>0d 0a 0d 0a</code> before carving</li>
+<li>Screenshot after removing the header information</li>
+<li>Answers to the three file-carving questions</li>
+</ul></li>
+<li><p><strong>Final Result</strong></p>
+<ul>
+<li>Screenshot showing <code>carved.pdf</code> successfully opened</li>
+<li>Briefly describe any problems you encountered and how you resolved
+them</li>
+</ul></li>
+</ol>
+<h1 id="submission">Submission</h1>
+<p>Submit your report as <strong>one PDF file</strong>.</p>
+<p>Use the following filename:</p>
+<p><code>LastName_FirstName_Lab1.pdf</code></p>
+<p>You do <strong>not</strong> need to submit
+<code>carved.pdf</code>.</p>
+<p>Make sure all screenshots are readable.</p>
+</body>
+</html>
