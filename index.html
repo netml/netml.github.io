@@ -1,314 +1,135 @@
-<!DOCTYPE HTML>
-
-<style>
-	#circle
-	{
-		border-radius:50% 50% 50% 50%;
-		width:200px;
-		height:200px;
-	}
-	.fit {
-		width: 100%;
-		display: block;
-	}
-	.centerV {
-	vertical-align: middle;
-	}
-	.center {
-	margin-left: auto;
-	margin-right: auto;
-	}
-</style>
-
-<html>
+<!doctype html>
+<html lang="en">
 	<head>
-		<title>NetML Lab | University of Central Missouri</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="NetML Lab at the University of Central Missouri develops machine learning and large language model methods for network security and cybersecurity analytics.">
+		<meta name="theme-color" content="#07111f">
+		<title>NetML Lab | AI for Network Security</title>
+		<link rel="stylesheet" href="assets/css/site.css">
 	</head>
 	<body>
-		<!-- Header -->
-		<header id="header">
-			<h1>NetML Lab | University of Central Missouri</h1>
+		<header class="site-header">
+			<div class="nav-wrap">
+				<a class="brand" href="index.html">NetML <span>Lab</span></a>
+				<nav class="site-nav" aria-label="Main navigation">
+					<a href="index.html" aria-current="page">Home</a>
+					<a href="research.html">Research</a>
+					<a href="people.html">People</a>
+					<a href="publications.html">Publications</a>
+					<a class="nav-cta" href="contact.html">Join the lab</a>
+				</nav>
+			</div>
 		</header>
 
-		<!-- One -->
-		<section id="one" class="main style2 right dark fullscreen">
-			<div align=center class="content box style2">
-				<header>
-					<img id="circle" src="./images/profile.jpg"></img>
-					<h2>NetML</h2>
-					<h4>Networking & Machine Learning Lab</h4>
-					<h3><a href="https://www.ucmo.edu/college-of-health-science-and-technology/department-of-computer-science-and-cybersecurity/" target="_blank">Department of Computer Science and Cybersecurity</a></h3>
-					<h3><a href="https://www.ucmo.edu" target="_blank">University of Central Missouri</a></h3>
-				</header>
-				<p>
-				Directed by: <a href="http://cs.ucmo.edu/~aksoy/" target="_blank">Dr. Ahmet Aksoy</a></br>
-				aksoy {at} ucmo.edu </br>
-				</p>
+		<main>
+			<section class="hero">
+				<div class="container hero-grid">
+					<div>
+						<p class="eyebrow">University of Central Missouri · Computer Science &amp; Cybersecurity</p>
+						<h1>Intelligent systems for <span>network security.</span></h1>
+						<p class="hero-lede">NetML Lab combines network measurement, machine learning, optimization, explainable AI, and large language models to understand complex security data and build practical defenses.</p>
+						<div class="hero-actions">
+							<a class="button button-primary" href="research.html">Explore our research</a>
+							<a class="button button-secondary" href="contact.html">Work with us</a>
+						</div>
+					</div>
+					<aside class="hero-card">
+						<img src="images/profile.jpg" alt="NetML Lab">
+						<p>Research led by Dr. Ahmet Aksoy at the University of Central Missouri.</p>
+					</aside>
+				</div>
+			</section>
 
-				<!-- Social -->
-				<ul class="actions">
-					<li><a href="https://scholar.google.com/citations?user=mt4x8MYAAAAJ&hl=en" class="icon fa-google" target="_blank"><span class="label">Google Scholar</span></a></li>
-					<li><a href="https://www.researchgate.net/profile/Ahmet_Aksoy4" class="icon fa-university" target="_blank"><span class="label">ResearchGate</span></a></li>
-					<li><a href="https://www.linkedin.com/company/netml" class="icon fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://github.com/netml" class="icon fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-				</ul>
+			<section class="section section-muted" aria-labelledby="latest-news-title">
+				<div class="container">
+					<div class="section-heading">
+						<p class="section-kicker">Latest research news</p>
+						<h2 id="latest-news-title">JMAP accepted at NeurIPS 2026 workshop.</h2>
+					</div>
+					<article class="publication">
+						<span class="pub-year">2026</span>
+						<div>
+							<span class="pub-type">Workshop paper · Accepted</span>
+							<h3>JMAP: Joint Multi-Document Attention with Clustering-Based Adaptive Context Pruning for Retrieval-Augmented Generation</h3>
+							<p>Jasurbek Ibragimov and Ahmet Aksoy</p>
+							<p class="pub-venue"><a class="text-link" href="https://longcontextfm.github.io/" target="_blank" rel="noopener">Workshop on Long Context Foundation Models (LCFM) @ NeurIPS 2026</a> · Atlanta, GA · <a class="text-link" href="publications.html#jmap">View publication entry</a></p>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="research">
+				<div class="container">
+					<div class="section-heading">
+						<p class="section-kicker">What we study</p>
+						<h2>Research that connects data, models, and security decisions.</h2>
+						<p class="section-intro">Our work focuses on making security analytics more automated, adaptive, interpretable, and useful in real network environments.</p>
+					</div>
+					<div class="research-grid">
+						<article class="research-card"><h3>Network threat detection</h3><p>Machine learning systems for detecting malicious traffic, botnets, denial-of-service attacks, fast-flux networks, and scanning activity.</p></article>
+						<article class="research-card"><h3>Device and OS fingerprinting</h3><p>Passive identification of devices, hosts, and operating systems from packet-level protocol headers and encrypted traffic metadata.</p></article>
+						<article class="research-card"><h3>Optimization and explainability</h3><p>Genetic algorithms, Artificial Bee Colony optimization, feature selection, quantization, and SHAP-based model analysis.</p></article>
+						<article class="research-card"><h3>LLMs and long-context AI</h3><p>Large language models for security tasks, alongside retrieval-augmented generation and adaptive context pruning.</p></article>
+					</div>
+				</div>
+			</section>
+
+			<section class="section section-muted">
+				<div class="container">
+					<div class="section-heading">
+						<p class="section-kicker">How we work</p>
+						<h2>From network telemetry to defensible insight.</h2>
+						<p class="section-intro">Students work across the full research cycle: framing a security problem, building data-driven methods, testing them against realistic traffic, and communicating results through publications and presentations.</p>
+					</div>
+					<div class="impact-grid">
+						<div class="impact-card"><strong>Data</strong><span>Network traffic, protocol headers, encrypted metadata, and security telemetry.</span></div>
+						<div class="impact-card"><strong>Models</strong><span>Machine learning, deep learning, optimization, explainability, and LLM-based methods.</span></div>
+						<div class="impact-card"><strong>Impact</strong><span>Research publications, open experiments, student training, and practical cybersecurity insight.</span></div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section" id="people">
+				<div class="container">
+					<div class="section-heading">
+						<p class="section-kicker">The lab</p>
+						<h2>Research is a team sport.</h2>
+						<p class="section-intro">NetML brings together students who want to build strong technical foundations, ask useful questions, and contribute to publishable research.</p>
+					</div>
+					<div class="people-grid">
+						<article class="person-card"><img src="images/aksoy.jpg" alt="Ahmet Aksoy"><div><h3>Ahmet Aksoy, Ph.D.</h3><p>Associate Professor · Lab Director</p></div></article>
+						<article class="person-card"><img src="images/jasur.jpg" alt="Jasurbek Ilkhombekovich Ibragimov"><div><h3>Jasurbek Ibragimov</h3><p>LLM optimization for cybersecurity</p></div></article>
+						<article class="person-card"><img src="images/yaman.jpg" alt="Yaman Shrestha"><div><h3>Yaman Shrestha</h3><p>LLM-based incident classification</p></div></article>
+						<article class="person-card"><img src="images/khursaid.jpg" alt="Khursaid Ansari"><div><h3>Khursaid Ansari</h3><p>LLM-based incident classification</p></div></article>
+						<article class="person-card"><img src="images/mayank.jpg" alt="Mayank Dembla"><div><h3>Mayank Dembla</h3><p>User behavior fingerprinting</p></div></article>
+						<article class="person-card"><img src="images/joshua.jpg" alt="Joshua Kiran Yajjala"><div><h3>Joshua Kiran Yajjala</h3><p>User behavior fingerprinting</p></div></article>
+					</div>
+					<p class="hero-actions"><a class="button button-secondary" style="color: var(--navy-900); border-color: var(--line);" href="people.html">Meet the full team</a></p>
+				</div>
+			</section>
+
+			<section class="section section-muted">
+				<div class="container">
+					<div class="join">
+						<p class="section-kicker">Build with us</p>
+						<h2>Interested in AI-driven cybersecurity research?</h2>
+						<p>We welcome motivated students with strong programming skills, analytical thinking, and curiosity about machine learning, networks, and security. Students engage in hands-on experiments and are expected to contribute to research and publication.</p>
+						<a class="button button-primary" href="contact.html">Learn how to apply</a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container footer-grid">
+				<p>NetML Lab · University of Central Missouri</p>
+				<div class="footer-links">
+					<a href="mailto:aksoy@ucmo.edu">aksoy@ucmo.edu</a>
+					<a href="https://github.com/netml" target="_blank" rel="noopener">GitHub</a>
+					<a href="https://scholar.google.com/citations?user=mt4x8MYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+				</div>
 			</div>
-		</section>
-
-		<!-- Work -->
-		<section id="work" class="main style3 primary">
-			<div class="content">
-				<!-- Menu -->
-				<table align=center>
-					<tr>
-						<td><h3><u>About</u></h3></td>
-						<td>|</td>
-						<td><h3><a href="research.html">Research</a></h3></td>
-						<td>|</td>
-						<td><h3><a href="publications.html">Publications</a></h3></td>
-						<td>|</td>
-						<td><h3><a href="contact.html">Contact</a></h3></td>
-					</tr>
-				</table>
-
-				<hr>
-
-				</br></br>
-
-				<header align=left>
-					<p>
-						<h3>Join NetML Lab</h3>
-						<p>NetML Lab welcomes motivated students interested in artificial intelligence for cybersecurity, including machine learning, deep learning, and large language model–based approaches. Our work emphasizes optimization-driven dimensionality reduction, network traffic intelligence, and interpretable AI for security analytics.</p>
-						<p>Students in the lab engage in hands-on research involving search-based model refinement, security telemetry analysis, and experimental validation across real-world datasets. Active participation in research and publication is expected.</p>
-						<p>Applicants should have solid programming skills (Python preferred), strong analytical thinking, and a genuine interest in AI-driven cybersecurity research.</p>
-						<p>
-							Our research has been featured in:
-							<br>
-							<a target="_blank" href="https://www.chameleoncloud.org/blog/2022/05/23/automated-fast-flux-detection-using-machine-learning-and-genetic-algorithms/">Chameleon Cloud Research Blog</a>
-							<br>
-							<a target="_blank" href="https://cybersecurityguide.org/expert-interviews/ahmet-aksoy/">Cybersecurity Guide Podcast</a>
-						</p>
-						<p>To apply, email your CV and a brief statement of research interests to <strong>aksoy {at} ucmo.edu</strong>.</p>
-
-						</br><hr></br>
-
-						<h3><u>Director:</u></h3>
-						<p>
-							<ul>
-								<table width="100%" border="0" cellspacing="0" cellpadding="0">
-									<tr class=fit>
-										<td width="100px" class="centerV" style="text-align:right;">
-											<img id="circle" src="./images/aksoy.jpg" alt="Ahmet Aksoy, Ph.D."></img>
-										</td>
-										<td width="50"></td>
-										<td>
-											<h2>Ahmet Aksoy, Ph.D.</h2>
-											<h3>Associate Professor</h3>
-											aksoy {at} ucmo.edu
-										</td>
-									</tr>
-								</table>
-							</ul>
-						</p>
-
-						<h3><u>Current Students:</u></h3>
-						<p>
-							<table width="100%" border="0" cellspacing="0" cellpadding="0">
-								<tr class="fit">
-									<td width="100px" class="centerV" style="text-align:right;">
-										<img id="circle" src="./images/jasur.jpg" alt="Jasurbek Ilkhombekovich Ibragimov"></img>
-									</td>
-									<td width="50"></td>
-									<td style="vertical-align: middle;">
-										<h2>Jasurbek Ilkhombekovich Ibragimov</h2>
-										<h3>Context-Constrained Optimization of Large Language Models for Cybersecurity</h3>
-										jxi80040 {at} ucmo.edu
-									</td>
-								</tr>
-
-								<tr height="30px"></tr>
-
-								<tr class="fit">
-									<td width="100px" class="centerV" style="text-align:right;">
-										<img id="circle" src="./images/yaman.jpg" alt="Yaman Shrestha"></img>
-									</td>
-									<td width="50"></td>
-									<td style="vertical-align: middle;">
-										<h2>Yaman Shrestha</h2>
-										<h3>Leveraging Large Language Models for Efficient Incident Classification in Cybersecurity</h3>
-										yxs33220 {at} ucmo.edu
-									</td>
-								</tr>
-
-								<tr height="30px"></tr>
-
-								<tr class="fit">
-									<td width="100px" class="centerV" style="text-align:right;">
-										<img id="circle" src="./images/khursaid.jpg" alt="Khursaid Ansari"></img>
-									</td>
-									<td width="50"></td>
-									<td style="vertical-align: middle;">
-										<h2>Khursaid Ansari</h2>
-										<h3>Leveraging Large Language Models for Efficient Incident Classification in Cybersecurity</h3>
-										kxa45490 {at} ucmo.edu
-									</td>
-								</tr>
-
-								<tr height="30px"></tr>
-
-								<tr class="fit">
-									<td width="100px" class="centerV" style="text-align:right;">
-										<img id="circle" src="./images/mayank.jpg" alt="Mayank Dembla"></img>
-									</td>
-									<td width="50"></td>
-									<td style="vertical-align: middle;">
-										<h2>Mayank Dembla</h2>
-										<h3>AI-Driven User Behavior Fingerprinting for Enhanced Security and Threat Detection</h3>
-										mxd08640 {at} ucmo.edu
-									</td>
-								</tr>
-
-								<tr height="30px"></tr>
-
-								<tr class="fit">
-									<td width="100px" class="centerV" style="text-align:right;">
-										<img id="circle" src="./images/joshua.jpg" alt="Joshua Kiran Yajjala"></img>
-									</td>
-									<td width="50"></td>
-									<td style="vertical-align: middle;">
-										<h2>Joshua Kiran Yajjala</h2>
-										<h3>AI-Driven User Behavior Fingerprinting for Enhanced Security and Threat Detection</h3>
-										jxy55130 {at} ucmo.edu
-									</td>
-								</tr>
-							</table>
-						</p>
-
-						<h3><u>Previous Students:</u></h3>
-						<p>
-							<table width="100%" border="0" cellspacing="0" cellpadding="0">
-								<tr class="fit">
-									<td width="100px" class="centerV" style="text-align:right;">
-										<img id="circle" src="./images/sundeep_varma.jpg" alt="Sundeep Varma"></img>
-									</td>
-									<td width="50"></td>
-									<td style="vertical-align: middle;">
-										<h2>Sundeep Varma</h2>
-										<h3>Comparative Analysis of Feature Selection Algorithms for Automated IoT Device Fingerprinting</h3>
-										sxv54730 {at} ucmo.edu
-									</td>
-								</tr>
-
-								<tr height="30px"></tr>
-
-								<tr class="fit">
-									<td width="100px" class="centerV" style="text-align:right;">
-										<img id="circle" src="./images/luis.jpg" alt="Luis Valle"></img>
-									</td>
-									<td width="50"></td>
-									<td style="vertical-align: middle;">
-										<h2>Luis Valle</h2>
-										<h3>Automated Network Incident Identification through Genetic Algorithm-Driven Feature Selection</h3>
-										lev33910 {at} ucmo.edu
-									</td>
-								</tr>
-
-								<tr height="30px"></tr>
-
-								<tr class="fit">
-									<td width="100px" class="centerV" style="text-align:right;">
-										<img id="circle" src="./images/sachin.jpg" alt="Sachin Rana"></img>
-									</td>
-									<td width="50"></td>
-									<td style="vertical-align: middle;">
-										<h2>Sachin Rana</h2>
-										<h3>Automated Fast-flux Detection using Machine Learning and Genetic Algorithms</h3>
-										sxr53490 {at} ucmo.edu
-									</td>
-								</tr>
-
-								<tr height="30px"></tr>
-
-								<tr class="fit">
-									<td width="100px" class="centerV" style="text-align:right;">
-										<img id="circle" src="./images/emiline.png" alt="Emiline Stewart"></img>
-									</td>
-									<td width="50"></td>
-									<td style="vertical-align: middle;">
-										<h2>Emiline Stewart</h2>
-										<h3>Network Traffic Fingerprinting using Artificial Bee Colony Algorithm</h3>
-										ers10570 {at} ucmo.edu
-									</td>
-								</tr>
-
-								<tr height="30px"></tr>
-
-								<tr class="fit">
-									<td width="100px" class="centerV" style="text-align:right;">
-										<img id="circle" src="./images/enya.jpg" alt="Enya Pan"></img>
-									</td>
-									<td width="50"></td>
-									<td style="vertical-align: middle;">
-										<h2>Enya Pan</h2>
-										<h3>Comparative Analysis of Feature Selection Algorithms for Automated IoT Device Fingerprinting</h3>
-										exp99350 {at} ucmo.edu
-									</td>
-								</tr>
-
-								<tr height="30px"></tr>
-
-								<tr class="fit">
-									<td width="100px" class="centerV" style="text-align:right;">
-										<img id="circle" src="./images/sharwin.jpg" alt="Sharwin Reddy"></img>
-									</td>
-									<td width="50"></td>
-									<td style="vertical-align: middle;">
-										<h2>Sharwin Reddy</h2>
-										<h3>Network Traffic Fingerprinting using Ant Colony Algorithm</h3>
-										sxp32460 {at} ucmo.edu
-									</td>
-								</tr>
-							</table>
-						</p>
-
-						</br><hr></br>
-
-						<h3><u>Lab:</u></h3>
-						<table>
-							<tr>
-								</br>
-								<td align="center">
-									<a href="./images/lab_1.jpg" target="_blank"><img width="90%" src="./images/lab_1.jpg"></img></a>
-								</td>
-								<td align="center">
-									<a href="./images/lab_2.jpg" target="_blank"><img width="90%" src="./images/lab_2.jpg"></img></a>
-								</td>
-							</tr>
-						</table>
-					</p>
-				</header>
-			</div>
-		</section>
-
-		<!-- Footer -->
-		<footer id="footer">
-			<!-- Menu -->
-			<ul class="menu">
-				<li>Design: <a href="https://html5up.net">HTML5 UP</font></a></li>
-			</ul>
 		</footer>
-
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.poptrox.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<script src="assets/js/main.js"></script>
 	</body>
 </html>
