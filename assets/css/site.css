@@ -46,17 +46,13 @@ a { color: inherit; }
 .section-heading { max-width: 700px; margin-bottom: 2.5rem; }
 .section h2 { margin: 0; color: var(--navy-900); font-size: clamp(2rem,4vw,3.3rem); letter-spacing: -.045em; line-height: 1.05; }
 .section-intro { margin: 1rem 0 0; color: var(--muted); font-size: 1.08rem; }
-.research-grid, .people-grid, .impact-grid { display: grid; gap: 1rem; }
+.research-grid, .people-grid { display: grid; gap: 1rem; }
 .research-grid { grid-template-columns: repeat(4,1fr); }
 .research-card { min-height: 260px; padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); transition: transform 180ms ease, box-shadow 180ms ease; }
 .research-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .research-number { color: var(--blue); font-size: .85rem; font-weight: 800; }
 .research-card h3 { margin: 0 0 .7rem; color: var(--navy-900); font-size: 1.2rem; line-height: 1.2; }
 .research-card p { margin: 0; color: var(--muted); font-size: .94rem; }
-.impact-grid { grid-template-columns: repeat(3,1fr); margin-top: 2rem; }
-.impact-card { padding: 1.7rem; border-radius: var(--radius); background: var(--navy-900); color: var(--white); }
-.impact-card strong { display: block; color: var(--blue-light); font-size: 2rem; line-height: 1; }
-.impact-card span { display: block; margin-top: .6rem; color: rgba(255,255,255,.7); }
 .people-grid { grid-template-columns: repeat(3,1fr); }
 .person-card { display: flex; gap: 1rem; align-items: center; padding: 1.1rem; border: 1px solid var(--line); border-radius: 14px; background: var(--white); }
 .person-card img { width: 68px; height: 68px; flex: 0 0 68px; object-fit: cover; border-radius: 50%; }
@@ -72,7 +68,7 @@ a { color: inherit; }
 .footer-links a { font-size: .88rem; text-decoration: none; }
 .footer-links a:hover { color: var(--blue-light); }
 @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; } .hero-card { max-width: 320px; } .research-grid { grid-template-columns: repeat(2,1fr); } .people-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 640px) { .nav-wrap, .container { width: min(100% - 2rem,1180px); } .site-nav { gap: .65rem; } .hero { min-height: auto; padding: 8rem 0 5rem; } .hero h1 { font-size: clamp(2.7rem,14vw,4.4rem); } .section { padding: 4.5rem 0; } .research-grid, .people-grid, .impact-grid { grid-template-columns: 1fr; } .join { padding: 2rem; } .footer-grid { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 640px) { .nav-wrap, .container { width: min(100% - 2rem,1180px); } .site-nav { gap: .65rem; } .hero { min-height: auto; padding: 8rem 0 5rem; } .hero h1 { font-size: clamp(2.7rem,14vw,4.4rem); } .section { padding: 4.5rem 0; } .research-grid, .people-grid { grid-template-columns: 1fr; } .join { padding: 2rem; } .footer-grid { align-items: flex-start; flex-direction: column; } }
 
 /* Interior pages use the same components and spacing as the home page. */
 .site-nav a[aria-current="page"] { color: var(--blue-light); }
