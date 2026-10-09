@@ -98,14 +98,15 @@ a { color: inherit; }
 .topic-card h4 { margin: 0 0 .6rem; color: var(--navy-900); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
 .paper-list { margin: 0; padding-left: 1.15rem; color: var(--ink); }
 .paper-list li { margin: .4rem 0; padding-left: .15rem; }
-.project-feature { display: grid; grid-template-columns: minmax(0,1.4fr) minmax(230px,.6fr); gap: 2.5rem; padding: 2.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
-.project-feature h3 { margin: 0 0 1.2rem; color: var(--navy-900); font-size: clamp(1.45rem,2.5vw,2rem); letter-spacing: -.035em; line-height: 1.2; }
-.project-feature p:not(.pub-type) { color: var(--muted); }
-.project-feature .text-link { display: inline-block; margin-top: .5rem; }
-.project-results { display: grid; gap: .75rem; align-content: center; }
-.project-results div { padding: 1.15rem 1.3rem; border-radius: 12px; background: var(--navy-900); }
-.project-results strong { display: block; color: var(--blue-light); font-size: clamp(1.45rem,2.5vw,2rem); line-height: 1.1; }
-.project-results span { display: block; margin-top: .35rem; color: rgba(255,255,255,.8); font-size: .9rem; line-height: 1.35; }
+.project-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.2rem; }
+.project-card { display: flex; flex-direction: column; min-width: 0; padding: 2rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
+.project-card h3 { margin: 0 0 .55rem; color: var(--navy-900); font-size: clamp(1.4rem,2vw,1.8rem); letter-spacing: -.03em; line-height: 1.2; }
+.project-card p:not(.pub-type) { margin: 0 0 1rem; color: var(--muted); }
+.project-card p.project-paper-title { color: var(--navy-800); font-size: .94rem; font-weight: 650; line-height: 1.45; }
+.project-card .text-link { align-self: flex-start; margin-top: 1.2rem; }
+.project-result { margin-top: auto; padding: 1.1rem 1.3rem; border-radius: 12px; background: var(--navy-900); }
+.project-result strong { display: block; color: var(--blue-light); font-size: clamp(1.25rem,2vw,1.65rem); line-height: 1.2; }
+.project-result span { display: block; margin-top: .35rem; color: rgba(255,255,255,.8); font-size: .88rem; line-height: 1.4; }
 .media-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.2rem; }
 .media-card { padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
 .media-card h3 { margin: 0 0 .4rem; color: var(--navy-900); font-size: 1.25rem; }
@@ -158,5 +159,5 @@ a { color: inherit; }
 .member-card .text-link { display: inline-block; margin-top: .7rem; font-size: .84rem; overflow-wrap: anywhere; }
 @media (max-width: 900px) { .section-topline { display: block; } .section-topline p { margin-top: 1rem; } .contact-grid { grid-template-columns: 1fr; } }
 @media (max-width: 800px) { .site-header { position: relative; background: var(--navy-950); } .nav-wrap { min-height: auto; padding: .9rem 0; flex-wrap: wrap; gap: .8rem; } .site-nav { display: flex; flex-wrap: wrap; width: 100%; gap: .6rem 1rem; white-space: normal; } .site-nav a:not(.nav-cta) { display: inline; } .site-nav a { font-size: .85rem; } .nav-cta { padding: .3rem .65rem; } .hero { padding-top: 5rem; } .page-hero { padding: 4.5rem 0; } .page-section { padding: 4rem 0; } }
-@media (max-width: 640px) { .topic-grid, .media-grid, .member-grid, .director-card, .project-feature { grid-template-columns: 1fr; } .topic-card, .contact-panel, .project-feature { padding: 1.5rem; } .publication { grid-template-columns: 1fr; gap: .3rem; } .publication-jump { margin-top: 1.5rem; } .director-card { gap: 1.5rem; } .director-card img { max-width: 260px; aspect-ratio: 1; } }
+@media (max-width: 640px) { .topic-grid, .media-grid, .member-grid, .director-card, .project-grid { grid-template-columns: 1fr; } .topic-card, .contact-panel, .project-card { padding: 1.5rem; } .publication { grid-template-columns: 1fr; gap: .3rem; } .publication-jump { margin-top: 1.5rem; } .director-card { gap: 1.5rem; } .director-card img { max-width: 260px; aspect-ratio: 1; } }
 @media (max-width: 390px) { .member-card { grid-template-columns: 80px minmax(0, 1fr); gap: .8rem; padding: .8rem; } .member-card img { width: 80px; height: 80px; } .member-card h3 { font-size: 1rem; } }
