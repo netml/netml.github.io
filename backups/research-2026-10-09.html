@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Explore NetML Lab research in network security, device fingerprinting, explainable AI, optimization, and long-context retrieval-augmented generation.">
+		<meta name="theme-color" content="#07111f">
+		<meta name="referrer" content="strict-origin-when-cross-origin">
+		<title>Research | NetML Lab</title>
+		<link rel="stylesheet" href="assets/css/site.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="nav-wrap">
+				<a class="brand" href="index.html">NetML <span>Lab</span></a>
+				<nav class="site-nav" aria-label="Main navigation">
+					<a href="index.html">Home</a>
+					<a href="research.html" aria-current="page">Research</a>
+					<a href="people.html">People</a>
+					<a href="publications.html">Publications</a>
+					<a class="nav-cta" href="contact.html">Join the lab</a>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<section class="page-hero">
+				<div class="container">
+					<p class="eyebrow">Research at NetML</p>
+					<h1>Where AI meets <span>network security.</span></h1>
+					<p class="hero-lede">We build AI methods for network security and efficient language-model systems: detecting threats, identifying devices, reducing noisy features, and making retrieved context more useful to LLMs.</p>
+					<div class="hero-actions"><a class="button button-primary" href="#research-areas">Explore research areas</a><a class="button button-secondary" href="publications.html">View publications</a></div>
+				</div>
+			</section>
+			<section class="page-section" id="research-areas">
+				<div class="container">
+					<div class="section-topline">
+						<div><p class="section-kicker">Our focus</p><h2>Four connected research directions.</h2></div>
+						<p>Our projects connect network measurement, optimization, and language models to practical problems.</p>
+					</div>
+					<div class="topic-grid">
+						<article class="topic-card">
+							<span class="research-number">01 / Language models</span>
+							<h3>LLMs for cybersecurity</h3>
+							<p>We investigate LLMs for adaptive security systems, including IoT fingerprinting, incident classification, and honeypots. We also study long-context retrieval-augmented generation and adaptive context pruning.</p>
+							<h4>Related papers</h4>
+							<ul class="paper-list"><li><a class="text-link" href="publications.html#jmap">JMAP: Joint Multi-Document Attention with Clustering-Based Adaptive Context Pruning for Retrieval-Augmented Generation</a></li><li>An LLM-Driven Adaptive Honeypot Testbed for Dynamic Intrusion Engagement</li><li>Automated IoT Fingerprinting with LLMs: Harnessing Explainable AI and Artificial Bee Colony Optimization</li></ul>
+						</article>
+						<article class="topic-card">
+							<span class="research-number">02 / Insight</span>
+							<h3>Optimization and explainable AI</h3>
+							<p>We reduce redundancy in high-dimensional security telemetry while preserving classification performance. Genetic algorithms, Artificial Bee Colony optimization, feature selection, quantization, and SHAP help us refine models and explain their decisions.</p>
+							<h4>Related papers</h4>
+							<ul class="paper-list"><li>Automated IoT Fingerprinting with LLMs: Harnessing Explainable AI and Artificial Bee Colony Optimization</li><li>Automated Host Identification Using SSL/TLS Traffic with SHAP and Artificial Bee Colony</li><li>AI-Driven Genetic Algorithms for Enhanced Numeric Feature Quantization in IoT Device Fingerprinting for Threat Detection</li><li>Automated Network Incident Identification through Genetic Algorithm-Driven Feature Selection</li><li>Comparative Analysis of Feature Selection Algorithms for Automated IoT Device Fingerprinting</li></ul>
+						</article>
+						<article class="topic-card">
+							<span class="research-number">03 / Identification</span>
+							<h3>Device, host, and OS fingerprinting</h3>
+							<p>We identify devices, operating systems, and hosts from protocol headers and encrypted SSL/TLS metadata. Our work studies compact traffic representations, passive identification, and the robustness of multi-protocol fingerprinting.</p>
+							<h4>Related papers</h4>
+							<ul class="paper-list"><li>Automated Passive OS Fingerprinting with Genetic Algorithms: Multi-Protocol Analysis and Adversarial Considerations</li><li>Automated Host Identification Using SSL/TLS Traffic with SHAP and Artificial Bee Colony</li><li>AI-Driven Genetic Algorithms for Enhanced Numeric Feature Quantization in IoT Device Fingerprinting for Threat Detection</li><li>Comparative Analysis of Feature Selection Algorithms for Automated IoT Device Fingerprinting</li><li>Automated IoT Device Identification from Network Traffic</li><li>Operating System Fingerprinting via Automated Network Traffic Analysis</li><li>Operating System Classification Performance of TCP/IP Protocol Headers</li></ul>
+						</article>
+						<article class="topic-card">
+							<span class="research-number">04 / Detection</span>
+							<h3>Automated network threat detection</h3>
+							<p>We develop frameworks that identify malicious behavior from packet-level telemetry, including DNS botnets, DoS attacks, fast-flux networks, and OS scanning. Search-based feature selection and machine learning help uncover useful header-level representations.</p>
+							<h4>Related papers</h4>
+							<ul class="paper-list"><li>Automated Network Incident Identification through Genetic Algorithm-Driven Feature Selection</li><li>Automated Fast-flux Detection using Machine Learning and Genetic Algorithms</li></ul>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="page-section page-section--muted" id="jmap-project" aria-labelledby="jmap-project-title">
+				<div class="container">
+					<div class="section-topline">
+						<div><p class="section-kicker">Project spotlight</p><h2 id="jmap-project-title">Making long-context RAG more selective.</h2></div>
+						<p>JMAP addresses the noisy, costly context that retrieval-augmented generation can pass to a reader model.</p>
+					</div>
+					<article class="project-feature">
+						<div>
+							<p class="pub-type">Accepted · LCFM @ NeurIPS 2026</p>
+							<h3>JMAP: Joint Multi-Document Attention with Clustering-Based Adaptive Context Pruning for Retrieval-Augmented Generation</h3>
+							<p>JMAP uses a 149M-parameter ModernBERT-base cross-encoder to score sentences across multiple retrieved documents together in one 8,192-token pass. Clustering the scores sets an adaptive pruning threshold, allowing it to remove distracting text while retaining evidence spread across documents.</p>
+							<p>In the paper's evaluation on HotpotQA, 2WikiMultihopQA, MuSiQue, and TriviaQA, the pruned context improved a Qwen3-8B reader's answer F1 over unpruned context on all four datasets.</p>
+							<a class="text-link" href="publications.html#jmap">View publication details</a>
+						</div>
+						<div class="project-results" aria-label="JMAP reported results">
+							<div><strong>81–87%</strong><span>fewer context tokens</span></div>
+							<div><strong>1.24–1.45×</strong><span>faster end-to-end responses</span></div>
+							<div><strong>1.6–2.0%</strong><span>of the reader's full-context compute used by the pruner</span></div>
+						</div>
+					</article>
+				</div>
+			</section>
+			<section class="page-section">
+				<div class="container">
+					<div class="section-topline"><div><p class="section-kicker">Research in conversation</p><h2>Hear more about the work.</h2></div><p>Talks and interviews offer a closer look at the questions behind our research.</p></div>
+					<div class="media-grid">
+						<article class="media-card"><h3>Research interview</h3><p>A conversation on cybersecurity research and the lab's approach.</p><iframe class="media-frame" src="https://open.spotify.com/embed/episode/5NLznmOnWPoORd9E5tvajD" title="NetML research interview on Spotify" loading="lazy" allow="encrypted-media"></iframe></article>
+						<article class="media-card"><h3>Fast-flux detection presentation</h3><p>Machine learning and genetic algorithms for detecting fast-flux networks.</p><div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/OEKEoWWQdkk?origin=https%3A%2F%2Fnetml.github.io&amp;widget_referrer=https%3A%2F%2Fnetml.github.io%2Fresearch.html" title="Automated Fast-flux Detection using Machine Learning and Genetic Algorithms" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></article>
+					</div>
+				</div>
+			</section>
+			<section class="section"><div class="container"><div class="join"><p class="section-kicker">Collaborate</p><h2>Interested in working with NetML?</h2><p>We welcome students and collaborators interested in machine learning, LLMs, networking, and cybersecurity.</p><a class="button button-primary" href="contact.html">Get in touch</a></div></div></section>
+		</main>
+		<footer class="site-footer"><div class="container footer-grid"><p>NetML Lab · University of Central Missouri</p><div class="footer-links"><a href="mailto:aksoy@ucmo.edu">aksoy@ucmo.edu</a><a href="https://github.com/netml" target="_blank" rel="noopener">GitHub</a><a href="https://scholar.google.com/citations?user=mt4x8MYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></div></div></footer>
+	</body>
+</html>
