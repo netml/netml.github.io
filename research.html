@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Explore NetML Lab research in network threat detection, device fingerprinting, explainable AI, optimization, and large language models for cybersecurity.">
+		<meta name="description" content="Explore NetML Lab research in network security, device fingerprinting, explainable AI, optimization, and long-context retrieval-augmented generation.">
 		<meta name="theme-color" content="#07111f">
 		<meta name="referrer" content="strict-origin-when-cross-origin">
 		<title>Research | NetML Lab</title>
@@ -27,7 +27,7 @@
 				<div class="container">
 					<p class="eyebrow">Research at NetML</p>
 					<h1>Where AI meets <span>network security.</span></h1>
-					<p class="hero-lede">We develop methods that turn network traffic and security telemetry into useful evidence: detecting threats, identifying devices, reducing noisy features, and exploring how LLMs can support security work.</p>
+					<p class="hero-lede">We build AI methods for network security and efficient language-model systems: detecting threats, identifying devices, reducing noisy features, and making retrieved context more useful to LLMs.</p>
 					<div class="hero-actions"><a class="button button-primary" href="#research-areas">Explore research areas</a><a class="button button-secondary" href="publications.html">View publications</a></div>
 				</div>
 			</section>
@@ -35,7 +35,7 @@
 				<div class="container">
 					<div class="section-topline">
 						<div><p class="section-kicker">Our focus</p><h2>Four connected research directions.</h2></div>
-						<p>Our projects connect network measurement with learning, optimization, and interpretable security decisions.</p>
+						<p>Our projects connect network measurement, optimization, and language models to practical problems.</p>
 					</div>
 					<div class="topic-grid">
 						<article class="topic-card">
@@ -69,7 +69,29 @@
 					</div>
 				</div>
 			</section>
-			<section class="page-section page-section--muted">
+			<section class="page-section page-section--muted" id="jmap-project" aria-labelledby="jmap-project-title">
+				<div class="container">
+					<div class="section-topline">
+						<div><p class="section-kicker">Project spotlight</p><h2 id="jmap-project-title">Making long-context RAG more selective.</h2></div>
+						<p>JMAP addresses the noisy, costly context that retrieval-augmented generation can pass to a reader model.</p>
+					</div>
+					<article class="project-feature">
+						<div>
+							<p class="pub-type">Accepted · LCFM @ NeurIPS 2026</p>
+							<h3>JMAP: Joint Multi-Document Attention with Clustering-Based Adaptive Context Pruning for Retrieval-Augmented Generation</h3>
+							<p>JMAP uses a 149M-parameter ModernBERT-base cross-encoder to score sentences across multiple retrieved documents together in one 8,192-token pass. Clustering the scores sets an adaptive pruning threshold, allowing it to remove distracting text while retaining evidence spread across documents.</p>
+							<p>In the paper's evaluation on HotpotQA, 2WikiMultihopQA, MuSiQue, and TriviaQA, the pruned context improved a Qwen3-8B reader's answer F1 over unpruned context on all four datasets.</p>
+							<a class="text-link" href="publications.html#jmap">View publication details</a>
+						</div>
+						<div class="project-results" aria-label="JMAP reported results">
+							<div><strong>81–87%</strong><span>fewer context tokens</span></div>
+							<div><strong>1.24–1.45×</strong><span>faster end-to-end responses</span></div>
+							<div><strong>1.6–2.0%</strong><span>of the reader's full-context compute used by the pruner</span></div>
+						</div>
+					</article>
+				</div>
+			</section>
+			<section class="page-section">
 				<div class="container">
 					<div class="section-topline"><div><p class="section-kicker">Research in conversation</p><h2>Hear more about the work.</h2></div><p>Talks and interviews offer a closer look at the questions behind our research.</p></div>
 					<div class="media-grid">
