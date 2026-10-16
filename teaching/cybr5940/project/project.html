@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Research_Project_Instructions</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">
+:root {
+--text: #1f1f1f;
+--muted: #666666;
+--border: #e5e5e5;
+--code-bg: #f4f4f4;
+--inline-code-bg: #f1f1f1;
+}
+html {
+background: #ffffff;
+font-size: 16px;
+}
+body {
+
+width: auto;
+max-width: 680px;
+margin: 0 auto;
+padding: 56px 24px 80px;
+color: var(--text);
+background: #ffffff;
+font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Helvetica, Arial, sans-serif;
+font-size: 16px;
+line-height: 1.65;
+-webkit-font-smoothing: antialiased;
+}
+
+header#title-block-header {
+margin-bottom: 2.5rem;
+}
+header#title-block-header .title {
+margin: 0 0 0.5rem;
+font-size: 2rem;
+line-height: 1.2;
+font-weight: 700;
+letter-spacing: -0.025em;
+}
+header#title-block-header .subtitle,
+header#title-block-header .author,
+header#title-block-header .date {
+margin: 0.2rem 0;
+color: var(--muted);
+font-size: 0.95rem;
+}
+h1, h2, h3, h4 {
+color: var(--text);
+line-height: 1.3;
+letter-spacing: -0.015em;
+}
+h1 {
+margin: 2.6rem 0 1rem;
+font-size: 1.75rem;
+font-weight: 700;
+}
+h2 {
+margin: 2.2rem 0 0.85rem;
+font-size: 1.4rem;
+font-weight: 700;
+}
+h3 {
+margin: 1.8rem 0 0.7rem;
+font-size: 1.12rem;
+font-weight: 650;
+}
+h4 {
+margin: 1.5rem 0 0.6rem;
+font-size: 1rem;
+font-weight: 650;
+}
+
+p {
+margin: 0.75rem 0;
+}
+strong {
+font-weight: 650;
+}
+a {
+color: inherit;
+text-decoration: underline;
+text-decoration-color: #9a9a9a;
+text-underline-offset: 2px;
+}
+ul, ol {
+margin: 0.75rem 0;
+padding-left: 1.55rem;
+}
+li {
+margin: 0.35rem 0;
+}
+hr {
+border: 0;
+border-top: 1px solid var(--border);
+margin: 2.5rem 0;
+}
+
+code {
+font-family: "SFMono-Regular", Consolas, "Liberation Mono",
+Menlo, monospace;
+}
+:not(pre) > code {
+padding: 0.15em 0.35em;
+background: var(--inline-code-bg);
+border-radius: 5px;
+font-size: 0.88em;
+}
+
+
+div.sourceCode {
+margin: 1rem 0 1.4rem;
+background: var(--code-bg) !important;
+border: 1px solid var(--border);
+border-radius: 10px;
+overflow: hidden;
+}
+div.sourceCode pre,
+div.sourceCode pre.sourceCode {
+margin: 0 !important;
+padding: 16px 18px !important;
+background: transparent !important;
+border: 0 !important;
+overflow-x: auto;
+line-height: 1.55;
+}
+
+pre {
+margin: 1rem 0 1.4rem;
+padding: 16px 18px;
+background: var(--code-bg);
+border: 1px solid var(--border);
+border-radius: 10px;
+overflow-x: auto;
+line-height: 1.55;
+}
+pre code,
+div.sourceCode code {
+padding: 0 !important;
+background: transparent !important;
+color: var(--text);
+font-size: 0.9rem;
+white-space: pre;
+}
+
+blockquote {
+margin: 1.25rem 0;
+padding: 0 0 0 1rem;
+border-left: 3px solid #c7c7c7;
+color: #444444;
+}
+blockquote p {
+margin: 0.45rem 0;
+}
+
+table {
+width: 100%;
+margin: 1.3rem 0 1.6rem;
+border-collapse: collapse;
+font-size: 0.94rem;
+}
+th, td {
+padding: 9px 11px;
+border-bottom: 1px solid var(--border);
+text-align: left;
+vertical-align: top;
+}
+th {
+font-weight: 650;
+}
+
+figure {
+margin: 1.6rem 0;
+}
+img {
+display: block;
+max-width: 100%;
+height: auto;
+margin: 1.4rem auto;
+border-radius: 8px;
+}
+figcaption {
+margin-top: 0.5rem;
+color: var(--muted);
+font-size: 0.86rem;
+text-align: center;
+}
+
+.note,
+.evidence,
+.question,
+.warning {
+margin: 1.15rem 0 1.4rem;
+padding: 14px 16px;
+background: #f7f7f7;
+border: 1px solid var(--border);
+border-radius: 10px;
+}
+.note > :first-child,
+.evidence > :first-child,
+.question > :first-child,
+.warning > :first-child {
+margin-top: 0;
+}
+.note > :last-child,
+.evidence > :last-child,
+.question > :last-child,
+.warning > :last-child {
+margin-bottom: 0;
+}
+
+@media print {
+@page {
+size: Letter;
+margin: 0.72in;
+}
+
+body {
+width: 5.8in;
+max-width: 5.8in;
+margin: 0 auto;
+padding: 0;
+font-size: 10.5pt;
+line-height: 1.55;
+}
+h1, h2, h3, h4 {
+break-after: avoid-page;
+page-break-after: avoid;
+}
+div.sourceCode,
+pre,
+table,
+blockquote,
+figure,
+.note,
+.evidence,
+.question,
+.warning {
+break-inside: avoid-page;
+page-break-inside: avoid;
+}
+pre,
+div.sourceCode {
+white-space: pre-wrap;
+overflow-wrap: anywhere;
+}
+a {
+text-decoration: none;
+}
+}
+</style>
+</head>
+<body>
+<h1 id="individual-research-project-instructions-and-guidelines">Individual
+Research Project: Instructions and Guidelines</h1>
+<p><strong>Due date:</strong> December 5 at midnight<br />
+<strong>Submission:</strong> Upload <strong>one PDF file</strong> to
+Brightspace.<br />
+<strong>Project type:</strong> Individual assignment</p>
+<h2 id="project-overview">1. Project overview</h2>
+<p>Choose a topic that interests you and is <strong>relevant to material
+covered in this class</strong>. Research a specific issue or problem
+related to that topic, examine solutions discussed in academic research,
+and explain what the evidence shows about their effectiveness.</p>
+<p>Your report should be <strong>1,200–1,500 words</strong>, excluding
+the reference list. Write in your own words and support your discussion
+with academic sources.</p>
+<p><strong>Required academic sources:</strong></p>
+<ul>
+<li><strong>Undergraduate students:</strong> At least <strong>5</strong>
+peer-reviewed journal articles or conference papers.</li>
+<li><strong>Graduate students:</strong> At least <strong>10</strong>
+peer-reviewed journal articles or conference papers.</li>
+</ul>
+<p>You may use <strong>Google Scholar</strong> to find relevant papers.
+Check that each source is a peer-reviewed journal article or conference
+paper rather than assuming every Google Scholar result qualifies.</p>
+<h2 id="required-report-structure">2. Required report structure</h2>
+<p>Use the following three main sections and headings in your
+report.</p>
+<h3 id="a.-introduction-at-least-300-words">A. Introduction — at least
+300 words</h3>
+<p>Introduce your chosen topic and explain why it matters. Clearly
+identify the issue or problem you will investigate. State the purpose of
+your report and briefly explain what the reader will learn.</p>
+<p><strong>Example:</strong> Rather than beginning with “Cybersecurity
+is important,” a stronger introduction might explain a particular
+cybersecurity challenge, who it affects, and why reviewing existing
+solutions is useful.</p>
+<h3 id="b.-background-report-at-least-600-words">B. Background Report —
+at least 600 words</h3>
+<p>This is the main part of your report. Address all three
+questions:</p>
+<ol type="1">
+<li><strong>What is the issue?</strong> Describe the problem and its
+significance.</li>
+<li><strong>What solutions have researchers proposed?</strong> Explain
+the precautions, approaches, or solutions discussed in the academic
+literature.</li>
+<li><strong>How well did they work?</strong> Discuss reported results,
+including successes, limitations, or failures.</li>
+</ol>
+<p><strong>Connect the studies into a coherent discussion.</strong>
+Group papers that address similar problems or propose related solutions.
+Compare their findings and use transitions to show how the research fits
+together. Do <strong>not</strong> write one disconnected paragraph
+summarizing each paper.</p>
+<p><strong>Example of synthesis:</strong> “Several studies examined
+approach A and reported improvements under certain conditions. Other
+researchers tested approach B, which addressed a different limitation
+but introduced additional costs.” Support statements like these with
+citations to the papers you read.</p>
+<p>When evaluating solutions, explain the evidence: for example, what
+improved, what remained difficult, and whether results differed across
+studies. Avoid simply saying a solution was “successful” without
+describing why.</p>
+<h3 id="c.-conclusion-at-least-200-words">C. Conclusion — at least 200
+words</h3>
+<p>Summarize the main insights from your research and explain what the
+findings suggest about the issue and proposed solutions. Connect your
+conclusion to the purpose of the report. You may identify an important
+remaining limitation or open question.</p>
+<p>Do not repeat earlier paragraphs word for word or introduce a
+completely new topic.</p>
+<p><strong>Word-count reminder:</strong> The section minimums add up to
+1,100 words, but the <strong>entire report must still be 1,200–1,500
+words</strong>. For example, a report with approximately 350 words in
+the introduction, 700 in the background report, and 250 in the
+conclusion meets both requirements.</p>
+<h2 id="citations-and-references">3. Citations and references</h2>
+<p>Use <strong>APA 7th edition</strong> for in-text citations and the
+reference list. Cite ideas, findings, and claims drawn from research
+papers, even when you paraphrase them. Include a
+<strong>References</strong> section after your conclusion with full
+details for every work cited in the report.</p>
+<p>The <strong>reference list does not count</strong> toward the
+1,200–1,500-word limit. Make sure your report meets the minimum number
+of qualifying academic papers for your student level.</p>
+<h2 id="grading-rubric-100-points">4. Grading rubric (100 points)</h2>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 40%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Criterion</th>
+<th style="text-align: right;">Points</th>
+<th>What will be evaluated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Introduction</td>
+<td style="text-align: right;">15</td>
+<td>Clear topic, issue, purpose, and context</td>
+</tr>
+<tr>
+<td>Background: understanding of the issue</td>
+<td style="text-align: right;">15</td>
+<td>Accurate and focused explanation of the problem</td>
+</tr>
+<tr>
+<td>Background: research synthesis and solutions</td>
+<td style="text-align: right;">25</td>
+<td>Relevant studies grouped and compared; proposed solutions clearly
+explained</td>
+</tr>
+<tr>
+<td>Background: evaluation of results</td>
+<td style="text-align: right;">15</td>
+<td>Evidence-based discussion of successes, failures, and
+limitations</td>
+</tr>
+<tr>
+<td>Conclusion</td>
+<td style="text-align: right;">10</td>
+<td>Clear takeaways that follow from the research</td>
+</tr>
+<tr>
+<td>Sources and APA citations</td>
+<td style="text-align: right;">15</td>
+<td>Required number and type of sources; consistent citations and
+reference list</td>
+</tr>
+<tr>
+<td>Organization, clarity, and requirements</td>
+<td style="text-align: right;">5</td>
+<td>Logical writing, required sections and word count, correct
+submission format</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>100</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-mistakes-to-avoid">5. Common mistakes to avoid</h2>
+<ul>
+<li>Choosing a topic that is too broad or unrelated to class
+material.</li>
+<li>Listing one paper after another instead of comparing related
+findings.</li>
+<li>Describing solutions without discussing their reported results.</li>
+<li>Making claims without citing the supporting research.</li>
+<li>Using nonacademic sources in place of the required peer-reviewed
+papers.</li>
+<li>Falling below a section minimum or outside the overall word-count
+range.</li>
+</ul>
+<h2 id="final-submission-checklist">6. Final submission checklist</h2>
+<p>Before submitting, confirm that:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>My topic is relevant to class
+material, and this is my individual work.</label></li>
+<li><label><input type="checkbox"></input>My report is <strong>1,200–1,500
+words</strong>, excluding references.</label></li>
+<li><label><input type="checkbox"></input>My <strong>Introduction</strong> is
+at least <strong>300 words</strong>.</label></li>
+<li><label><input type="checkbox"></input>My <strong>Background
+Report</strong> is at least <strong>600 words</strong> and discusses the
+issue, solutions, and results.</label></li>
+<li><label><input type="checkbox"></input>My <strong>Conclusion</strong> is at
+least <strong>200 words</strong>.</label></li>
+<li><label><input type="checkbox"></input>I used at least <strong>5</strong>
+qualifying papers (undergraduate) or <strong>10</strong>
+(graduate).</label></li>
+<li><label><input type="checkbox"></input>I cited my sources and included an
+<strong>APA 7</strong> reference list.</label></li>
+<li><label><input type="checkbox"></input>I combined everything into
+<strong>one PDF file</strong>.</label></li>
+<li><label><input type="checkbox"></input>I uploaded the PDF to
+<strong>Brightspace by December 5 at midnight</strong>.</label></li>
+</ul>
+</body>
+</html>
