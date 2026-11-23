@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.14" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>HMW3_NetFlow</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+em, em em em, em em em em em {
+font-style: italic;
+}
+em em, em em em em {
+font-style: normal;
+}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+@media print {
+html {
+color-scheme: light only;
+}
+html, body, pre, code {
+background-color: transparent;
+}
+body, a, a:visited, blockquote {
+color: black;
+}
+pre, code {
+padding: 0;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+} </style>
+  <style type="text/css">
+:root {
+--text: #1f1f1f;
+--muted: #666666;
+--border: #e5e5e5;
+--code-bg: #f4f4f4;
+--inline-code-bg: #f1f1f1;
+}
+html {
+background: #ffffff;
+font-size: 16px;
+}
+body {
+
+width: auto;
+max-width: 680px;
+margin: 0 auto;
+padding: 56px 24px 80px;
+color: var(--text);
+background: #ffffff;
+font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Helvetica, Arial, sans-serif;
+font-size: 16px;
+line-height: 1.65;
+-webkit-font-smoothing: antialiased;
+}
+
+header#title-block-header {
+margin-bottom: 2.5rem;
+}
+header#title-block-header .title {
+margin: 0 0 0.5rem;
+font-size: 2rem;
+line-height: 1.2;
+font-weight: 700;
+letter-spacing: -0.025em;
+}
+header#title-block-header .subtitle,
+header#title-block-header .author,
+header#title-block-header .date {
+margin: 0.2rem 0;
+color: var(--muted);
+font-size: 0.95rem;
+}
+h1, h2, h3, h4 {
+color: var(--text);
+line-height: 1.3;
+letter-spacing: -0.015em;
+}
+h1 {
+margin: 2.6rem 0 1rem;
+font-size: 1.75rem;
+font-weight: 700;
+}
+h2 {
+margin: 2.2rem 0 0.85rem;
+font-size: 1.4rem;
+font-weight: 700;
+}
+h3 {
+margin: 1.8rem 0 0.7rem;
+font-size: 1.12rem;
+font-weight: 650;
+}
+h4 {
+margin: 1.5rem 0 0.6rem;
+font-size: 1rem;
+font-weight: 650;
+}
+
+p {
+margin: 0.75rem 0;
+}
+strong {
+font-weight: 650;
+}
+a {
+color: inherit;
+text-decoration: underline;
+text-decoration-color: #9a9a9a;
+text-underline-offset: 2px;
+}
+ul, ol {
+margin: 0.75rem 0;
+padding-left: 1.55rem;
+}
+li {
+margin: 0.35rem 0;
+}
+hr {
+border: 0;
+border-top: 1px solid var(--border);
+margin: 2.5rem 0;
+}
+
+code {
+font-family: "SFMono-Regular", Consolas, "Liberation Mono",
+Menlo, monospace;
+}
+:not(pre) > code {
+padding: 0.15em 0.35em;
+background: var(--inline-code-bg);
+border-radius: 5px;
+font-size: 0.88em;
+}
+
+
+div.sourceCode {
+margin: 1rem 0 1.4rem;
+background: var(--code-bg) !important;
+border: 1px solid var(--border);
+border-radius: 10px;
+overflow: hidden;
+}
+div.sourceCode pre,
+div.sourceCode pre.sourceCode {
+margin: 0 !important;
+padding: 16px 18px !important;
+background: transparent !important;
+border: 0 !important;
+overflow-x: auto;
+line-height: 1.55;
+}
+
+pre {
+margin: 1rem 0 1.4rem;
+padding: 16px 18px;
+background: var(--code-bg);
+border: 1px solid var(--border);
+border-radius: 10px;
+overflow-x: auto;
+line-height: 1.55;
+}
+pre code,
+div.sourceCode code {
+padding: 0 !important;
+background: transparent !important;
+color: var(--text);
+font-size: 0.9rem;
+white-space: pre;
+}
+
+blockquote {
+margin: 1.25rem 0;
+padding: 0 0 0 1rem;
+border-left: 3px solid #c7c7c7;
+color: #444444;
+}
+blockquote p {
+margin: 0.45rem 0;
+}
+
+table {
+width: 100%;
+margin: 1.3rem 0 1.6rem;
+border-collapse: collapse;
+font-size: 0.94rem;
+}
+th, td {
+padding: 9px 11px;
+border-bottom: 1px solid var(--border);
+text-align: left;
+vertical-align: top;
+}
+th {
+font-weight: 650;
+}
+
+figure {
+margin: 1.6rem 0;
+}
+img {
+display: block;
+max-width: 100%;
+height: auto;
+margin: 1.4rem auto;
+border-radius: 8px;
+}
+figcaption {
+margin-top: 0.5rem;
+color: var(--muted);
+font-size: 0.86rem;
+text-align: center;
+}
+
+.note,
+.evidence,
+.question,
+.warning {
+margin: 1.15rem 0 1.4rem;
+padding: 14px 16px;
+background: #f7f7f7;
+border: 1px solid var(--border);
+border-radius: 10px;
+}
+.note > :first-child,
+.evidence > :first-child,
+.question > :first-child,
+.warning > :first-child {
+margin-top: 0;
+}
+.note > :last-child,
+.evidence > :last-child,
+.question > :last-child,
+.warning > :last-child {
+margin-bottom: 0;
+}
+
+@media print {
+@page {
+size: Letter;
+margin: 0.72in;
+}
+
+body {
+width: 5.8in;
+max-width: 5.8in;
+margin: 0 auto;
+padding: 0;
+font-size: 10.5pt;
+line-height: 1.55;
+}
+h1, h2, h3, h4 {
+break-after: avoid-page;
+page-break-after: avoid;
+}
+div.sourceCode,
+pre,
+table,
+blockquote,
+figure,
+.note,
+.evidence,
+.question,
+.warning {
+break-inside: avoid-page;
+page-break-inside: avoid;
+}
+pre,
+div.sourceCode {
+white-space: pre-wrap;
+overflow-wrap: anywhere;
+}
+a {
+text-decoration: none;
+}
+}
+</style>
+</head>
+<body>
+<h1 id="homework-3-netflow">Homework 3 – NetFlow</h1>
+<h2 id="objective">Objective</h2>
+<p>In this homework, you will install <strong>nfdump</strong>, convert a
+packet capture (PCAP) into flow records using <strong>nfpcapd</strong>,
+and explore network traffic using <strong>nfdump</strong>. You will
+practice interpreting flow fields, changing output formats, and applying
+flow filters.</p>
+<blockquote>
+<p><strong>Environment:</strong> Ubuntu Linux. Commands may differ
+across nfdump releases. If an option is unavailable, consult
+<code>nfpcapd -h</code> or <code>nfdump -h</code> and document the
+version used.</p>
+</blockquote>
+<h2 id="part-1-install-and-verify-the-tools">Part 1 – Install and verify
+the tools</h2>
+<h3 id="install-nfdump-from-the-ubuntu-repository">1. Install nfdump
+from the Ubuntu repository</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> nfdump</span></code></pre></div>
+<p>There is no need to clone or compile the source code for this
+assignment.</p>
+<h3 id="verify-installation-and-pcap-conversion-support">2. Verify
+installation and PCAP conversion support</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-V</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> <span class="at">-v</span> nfpcapd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">nfpcapd</span> <span class="at">-h</span></span></code></pre></div>
+<p><strong>Important:</strong> Ubuntu package versions differ. If
+<code>nfpcapd</code> is missing, or its help output does not support
+reading a PCAP file (<code>-r</code>), contact your instructor before
+proceeding. Do not substitute an unverified installation procedure.</p>
+<h2 id="part-2-convert-a-pcap-to-flow-records">Part 2 – Convert a PCAP
+to flow records</h2>
+<h3 id="return-to-the-desktop-and-download-a-sample-capture">3. Return
+to the Desktop and download a sample capture</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> SkypeIRC.cap <span class="dt">\</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;https://gitlab.com/wireshark/wireshark/-/wikis/uploads/__moin_import__/attachments/SampleCaptures/SkypeIRC.cap&#39;</span></span></code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> If the sample-capture link has moved, obtain
+the <code>SkypeIRC.cap</code> capture from the Wireshark SampleCaptures
+collection and save it to <code>~/Desktop</code>.</p>
+</blockquote>
+<h3 id="create-a-directory-for-flow-records">4. Create a directory for
+flow records</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> netflow</span></code></pre></div>
+<h3 id="convert-the-capture">5. Convert the capture</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfpcapd</span> <span class="at">-r</span> SkypeIRC.cap <span class="at">-S</span> 1 <span class="at">-z</span> <span class="at">-l</span> ./netflow</span></code></pre></div>
+<p>Check that the <code>netflow</code> directory contains generated
+files:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> ./netflow</span></code></pre></div>
+<blockquote>
+<p><strong>Version check:</strong> Confirm the meaning and availability
+of <code>-r</code>, <code>-S</code>, <code>-z</code>, and
+<code>-l</code> with <code>nfpcapd -h</code>. If your installed version
+does not support these options, ask your instructor for the compatible
+command. The capture and output paths must match your files and
+directories.</p>
+</blockquote>
+<h2 id="part-3-explore-netflow-records">Part 3 – Explore NetFlow
+records</h2>
+<h3 id="display-records-in-different-formats">6. Display records in
+different formats</h3>
+<p>Run each command and compare the information displayed.</p>
+<p><strong>a. Default output</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-R</span> ./netflow <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<p><strong>b. Line format</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-R</span> ./netflow <span class="at">-o</span> line <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<p><strong>c. Long format</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-R</span> ./netflow <span class="at">-o</span> long <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<p><strong>d. Extended format</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-R</span> ./netflow <span class="at">-o</span> extended <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<p><strong>e. Custom output (timestamps)</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-R</span> ./netflow <span class="at">-o</span> <span class="st">&#39;fmt:%ts&#39;</span> <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<p>For each format, identify the fields you can see, including
+source/destination addresses, ports, protocol, packets, bytes, and
+timestamps where available.</p>
+<h3 id="filter-flow-records">7. Filter flow records</h3>
+<p><code>nfdump</code> uses <strong>its own flow-filter expression
+language</strong>, not the full Berkeley Packet Filter (BPF) language
+used by tools such as <code>tcpdump</code>.</p>
+<p><strong>a. Traffic involving port 53</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-R</span> ./netflow <span class="st">&#39;port 53&#39;</span></span></code></pre></div>
+<p><strong>b. TCP traffic</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-R</span> ./netflow <span class="st">&#39;proto tcp&#39;</span></span></code></pre></div>
+<p><strong>c. UDP traffic</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-R</span> ./netflow <span class="st">&#39;proto udp&#39;</span></span></code></pre></div>
+<blockquote>
+<p>A filter may return no records if the selected traffic type is absent
+from the capture. An empty result is not necessarily a command
+failure.</p>
+</blockquote>
+<h3 id="summarize-traffic">8. Summarize traffic</h3>
+<p><strong>a. Top 10 source IP addresses by bytes</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-R</span> ./netflow <span class="at">-s</span> srcip/bytes <span class="at">-n</span> 10</span></code></pre></div>
+<p><strong>b. Top 10 destination IP addresses by bytes</strong></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-R</span> ./netflow <span class="at">-s</span> dstip/bytes <span class="at">-n</span> 10</span></code></pre></div>
+<p><strong>c. Top 10 destination ports by flow count</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nfdump</span> <span class="at">-R</span> ./netflow <span class="at">-s</span> dstport/flows <span class="at">-n</span> 10</span></code></pre></div>
+<h2 id="part-4-questions-100-points">Part 4 – Questions (100
+points)</h2>
+<p>Submit a single PDF containing your answers, the commands you used,
+and relevant screenshots or excerpts of command output. Explain findings
+in your own words.</p>
+<ol type="1">
+<li><strong>Installation verification (10 points):</strong> Report your
+<code>nfdump</code> and <code>nfpcapd</code> versions and provide
+evidence that the tools run successfully.</li>
+<li><strong>Packet versus flow records (15 points):</strong> Explain the
+difference between a packet capture and a NetFlow record. Identify at
+least four fields found in the flow output and explain what they
+mean.</li>
+<li><strong>Output formats (15 points):</strong> Compare
+<code>line</code>, <code>long</code>, and <code>extended</code> output.
+Which format is most useful for investigating a specific connection, and
+why?</li>
+<li><strong>Protocol analysis (15 points):</strong> Determine which
+transport protocols appear in your converted capture. Provide the filter
+commands and supporting output.</li>
+<li><strong>Port filtering (10 points):</strong> Run the port 53 filter.
+Explain what the result indicates. If there are no matches, explain why
+this is a valid finding and identify another port present in your
+data.</li>
+<li><strong>Top talkers (15 points):</strong> Identify the leading
+source and destination IP addresses by byte count. Report the values and
+explain what the rankings tell you about the capture.</li>
+<li><strong>Destination ports (10 points):</strong> Identify the most
+common destination ports by flow count. Discuss what services, if any,
+those ports typically represent; distinguish likely services from
+confirmed application behavior.</li>
+<li><strong>Traffic filtering (10 points):</strong> Using
+<code>nfdump</code>, identify the source IP address that generated the
+most traffic in terms of bytes. Then filter the NetFlow records to
+display only traffic originating from that IP address. Provide the
+commands used and screenshots of the results.</li>
+</ol>
+<h2 id="submission-checklist">Submission checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Tools and versions
+documented</label></li>
+<li><label><input type="checkbox"></input>Flow records generated
+successfully</label></li>
+<li><label><input type="checkbox"></input>Commands and relevant outputs
+included</label></li>
+<li><label><input type="checkbox"></input>All eight questions
+answered</label></li>
+<li><label><input type="checkbox"></input>Observations distinguished from
+assumptions</label></li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li>nfdump source and documentation:
+https://github.com/phaag/nfdump</li>
+<li>Wireshark sample captures:
+https://wiki.wireshark.org/SampleCaptures</li>
+</ul>
+</body>
+</html>
